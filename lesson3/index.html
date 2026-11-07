@@ -1,0 +1,552 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#fafafa"><title>Lesson 3 - The Night Everything Went Wrong</title><style>
+:root{--bg:#f7f6f4;--surface:#fff;--ink:#20232a;--sub:#656b75;--muted:#8d9199;--line:#e8e7e5;--soft:#f4f3f2;--accent:#b43f75;--good:#2d745a;--bad:#b64b4b;--radius:16px}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink)}body{font-family:'DM Sans',Arial,sans-serif;font-size:15px;line-height:1.6}button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}button:focus-visible,select:focus-visible,textarea:focus-visible,input:focus-visible{outline:3px solid #c487a6;outline-offset:2px}#app{display:flex;min-height:100vh}.rail{width:276px;flex:0 0 276px;border-right:1px solid var(--line);height:100vh;position:sticky;top:0;background:#faf9f8;display:flex;flex-direction:column;overflow:hidden}.brand{display:flex;align-items:center;gap:12px;margin:29px 25px 25px}.brand-mark{background:#24232a;color:#fff;border-radius:13px;width:45px;height:45px;display:flex;align-items:center;justify-content:center;font-family:Manrope;font-weight:800;letter-spacing:-2px}.brand-mark span{color:#e28db4;align-self:flex-start;font-size:12px;letter-spacing:0;margin:7px 0 0 2px}.brand strong{font:800 13px Manrope;letter-spacing:1px}.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:2px;margin-top:3px}.unit-label{margin:0 25px 15px;padding:14px 0;border-top:1px solid var(--line);font-size:10px;color:var(--accent);letter-spacing:1.4px;font-weight:800}.unit-label span{display:block;color:var(--sub);font-weight:500;font-size:10px;letter-spacing:.5px;margin-top:6px}#chapterList{overflow:auto;padding:0 12px 22px}.chapter{padding:12px;border-radius:10px;display:flex;gap:11px;text-align:left;width:100%;background:transparent;border:0;color:#62656d;line-height:1.28;margin-bottom:3px;align-items:center}.chapter:hover{background:#efedeb}.chapter.active{background:#ece7e9;color:#2e242a;font-weight:700}.chapter.done .no{background:#e6eee9;color:var(--good)}.chapter .no{font-size:10px;border-radius:8px;width:28px;height:28px;display:grid;place-items:center;flex:none;background:#efeeec;color:#81838a;font-weight:800}.chapter.active .no{background:var(--accent);color:white}.chapter-title{font-size:12px}.chapter small{display:block;font-size:9px;letter-spacing:.4px;color:var(--muted);margin-top:4px}.rail-foot{margin-top:auto;padding:14px 24px;display:flex;justify-content:space-between;color:var(--muted);font-size:9px;border-top:1px solid var(--line)}.main{min-width:0;flex:1}.topbar{height:76px;border-bottom:1px solid var(--line);background:#fdfcfb;display:flex;justify-content:space-between;align-items:center;padding:0 max(34px,calc((100vw - 1250px)/2));gap:12px}.top-left,.top-right{display:flex;align-items:center;gap:16px}.eyebrow{font-size:10px;font-weight:700;letter-spacing:1.9px;color:#777880}.head-status{padding:6px 10px;border:1px solid var(--line);border-radius:20px;font-size:10px;color:#6f7279}.saved{font-size:11px;color:var(--good);white-space:nowrap}.subtle-btn,.icon-btn{border:1px solid var(--line);background:#fff;padding:9px 13px;border-radius:10px;color:#5c5f65;font-size:11px}.reading{max-width:960px;padding:38px 42px 52px;margin:auto}.lesson-kicker{font-size:11px;font-weight:800;color:var(--accent);letter-spacing:2px;margin-bottom:11px}.page-heading{font:800 clamp(26px,3vw,39px)/1.19 Manrope,Arial,sans-serif;letter-spacing:-1.3px;margin:0 0 11px}.page-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--sub);font-size:12px;margin-bottom:24px}.pill{background:#f0e9ec;color:#8d4569;border-radius:100px;padding:5px 11px;font-size:10px;font-weight:700}.content-surface{background:#fff;border:1px solid var(--line);border-radius:18px;padding:32px;box-shadow:0 4px 20px #2c292508}.section{margin:0 0 29px}.section:last-child{margin-bottom:0}.section-title{font:800 11px Manrope,sans-serif;color:#9e5374;letter-spacing:1.1px;text-transform:uppercase;margin:0 0 12px}.section h3{font:800 19px Manrope;margin:0 0 12px}.section p{margin:8px 0 12px}.intro{font-size:15px;font-weight:600;color:#34363b;margin:0 0 13px}.muted{color:var(--sub)}.small{font-size:12px}.quiet{font-size:11px;color:var(--muted)}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.frame,.post,.card,.dialog,.quiz-block,.scenario,.mini-card{border:1px solid var(--line);background:#fff;border-radius:13px;padding:16px}.post{padding:0;overflow:hidden}.post-body{padding:13px 15px}.post-head{display:flex;align-items:center;gap:9px;padding:12px 14px}.avatar{width:31px;height:31px;border-radius:50%;background:linear-gradient(130deg,#cbbbc4,#8d8b94);display:grid;place-items:center;color:white;font-size:13px;font-weight:800;flex:none}.handle{font-size:12px;font-weight:800}.dim{font-size:10px;color:var(--muted)}.photo{width:100%;height:135px;object-fit:cover;background:#dad4d5;display:block}.photo.tall{height:180px}.photo.short{height:104px}.post-icons{display:flex;gap:14px;color:#757782;font-size:17px;padding:8px 14px 14px}.card .photo{border-radius:9px;margin:0 0 12px}.card h3,.post h3{margin:0 0 6px;font-size:14px}.card p,.post p{margin:0;color:#484950;font-size:13px}.card-label{font-size:10px;color:#99627b;letter-spacing:.9px;font-weight:800;margin-bottom:8px}.callout{padding:17px 19px;border:1px solid #ebe5e7;border-radius:13px;background:#f8f5f6;margin:18px 0}.callout strong{font-size:11px;letter-spacing:.7px;text-transform:uppercase;display:block;margin-bottom:7px}.callout p{margin:4px 0;font-size:13px}.expr{font-weight:700;color:#844064}.separator{height:1px;background:var(--line);margin:20px 0}.sentence,.question{background:#faf9f8;border:1px solid var(--line);padding:12px 14px;border-radius:10px;margin:9px 0}.question-title{font-weight:600;margin:0 0 11px;font-size:13px}.opts{display:flex;gap:9px;flex-wrap:wrap}.opts.vertical{display:block}.option{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;background:#fff;border:1px solid #ece9e8;border-radius:9px;cursor:pointer;font-size:13px;flex:1;min-width:100px}.opts.vertical .option{margin:6px 0}.option:has(input:checked){background:#f7eef2;border-color:#cfaab9}.option input{accent-color:#a54d72;margin:3px 0 0;flex:none}.option.correct{border-color:#6baa93;background:#ecf7f0}.option.incorrect{border-color:#d19393;background:#fff1f1}.inline-input,.text-input,.answer-input,.choice-select{width:100%;padding:11px 12px;border:1px solid #dcd9d7;background:white;border-radius:9px;color:var(--ink);font-size:13px}.text-input{min-height:68px;resize:vertical}.input-row{margin:10px 0 15px}.input-label{font-size:13px;display:block;margin-bottom:8px}.answer-input.correct,.choice-select.correct{border-color:#5caa83;background:#f1faf4}.answer-input.incorrect,.choice-select.incorrect{border-color:#c36c6c;background:#fff4f4}.correction{font-size:11px;color:var(--good);margin-top:6px;display:none}.show-answers .correction{display:block}.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.match-entry{background:#faf9f8;padding:11px;border-radius:9px;font-size:12px;margin-bottom:6px;display:flex;gap:7px}.match-entry strong{color:var(--accent)}.choice-select{max-width:210px;margin:5px 0}.match-row{display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid #ecebea;padding:10px 0;font-size:13px}.match-row:last-child{border:0}.sort-chip{border:1px solid #ddd5d7;background:#fdfbfc;border-radius:8px;padding:8px 11px;cursor:grab;text-align:center;font-size:12px;font-weight:600;user-select:none}.sort-chip.chosen{border-color:var(--accent);background:#f9eaf0}.sort-pool{display:flex;gap:9px;flex-wrap:wrap;padding:12px;background:#f7f5f4;border-radius:10px;margin-bottom:13px;min-height:52px}.sort-zone{min-height:120px;border:1px dashed #c7bbc1;border-radius:12px;padding:12px;background:#fdfbfc}.sort-zone.over{background:#f7e9ef;border-color:#a55378}.sort-zone h4{margin:0;font:800 12px Manrope}.sort-zone p{margin:5px 0 11px;color:var(--sub);font-size:11px}.zone-chips{display:flex;flex-wrap:wrap;gap:6px}.zone-chips .sort-chip{cursor:pointer}.sort-note{color:var(--sub);font-size:11px;margin:10px 0}.slider-wrap{padding:14px;background:#faf9f8;border-radius:10px;margin-bottom:9px}.slider-wrap input{width:100%;accent-color:#aa5479}.slider-mark{font-size:11px;color:var(--sub);display:flex;justify-content:space-between}.metric{font-weight:700;color:#9f4a71}.chip-options{display:flex;gap:7px;flex-wrap:wrap}.small-choice{border:1px solid #ded7db;border-radius:9px;background:#fff;padding:8px 9px;font-size:11px;font-weight:700}.small-choice.selected{border-color:#b35a83;background:#faecf2}.small-choice.correct{border-color:var(--good);background:#e9f6ef}.small-choice.incorrect{border-color:var(--bad);background:#fff0ef}.mini-table{width:100%;border-collapse:collapse;font-size:12px;margin:14px 0}.mini-table th,.mini-table td{border-bottom:1px solid #eae8e7;padding:11px 9px;text-align:left;vertical-align:top}.mini-table th{font-size:10px;color:#7e7f84;background:#f7f6f5;letter-spacing:.6px}.speech-bubble{background:#f6f3f4;border-radius:13px;padding:15px;margin:9px 0;font-size:13px}.bubble-speaker{font-size:10px;color:#895771;font-weight:800;letter-spacing:.6px;margin-bottom:5px}.word-bank{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}.word-chip{border-radius:8px;background:#f2eff0;padding:7px 10px;font-size:12px;font-weight:700}.timer-label{font-weight:800;color:#9f5276;font-size:11px;letter-spacing:1px}.hint{font-size:11px;color:var(--sub);margin-top:5px}.task-result{margin-top:8px;font-size:11px;font-weight:700}.task-result.good{color:var(--good)}.task-result.bad{color:var(--bad)}.youtube{width:100%;aspect-ratio:16/9;background:#141414;border-radius:13px;overflow:hidden}.youtube iframe{border:0;width:100%;height:100%}.link-btn{display:inline-block;padding:10px 13px;border:1px solid var(--line);border-radius:9px;color:var(--accent);text-decoration:none;font-size:12px;margin-top:9px;font-weight:700}.tool-btn{background:#fff;border:1px solid #dcd2d7;color:#713b56;padding:9px 12px;border-radius:9px;font-size:12px;font-weight:700}.tool-btn:hover{background:#fbf0f5}.speakline{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.speakline:last-child{border:0}.activity-tag{font-size:10px;font-weight:700;color:#98617b;text-transform:uppercase;letter-spacing:1px}.actionbar{margin:15px 0 0;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.feedback{font-size:12px;color:var(--sub);min-height:20px}.feedback.good{color:var(--good)}.actions{display:flex;gap:8px}.outline-btn{background:#fff;border:1px solid #d9d2d3;border-radius:10px;padding:11px 15px;color:#36343a;font-size:12px;font-weight:700}.outline-btn:hover{border-color:#a96583}.footer-nav{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:32px 0 15px}.nav-button{border-radius:11px;border:1px solid #dedade;padding:14px 20px;font-weight:800;font-size:12px}.nav-button.primary{background:#2b252c;color:#fff;border-color:#2b252c}.nav-button.secondary{background:#fff}.dots{font-size:11px;color:var(--muted)}.modal-backdrop{position:fixed;inset:0;background:#17151b9a;z-index:100;display:grid;place-items:center;padding:20px}.hidden{display:none!important}.modal{max-width:390px;background:white;border-radius:17px;padding:27px;box-shadow:0 15px 55px #0002}.modal h3{margin:0 0 10px}.modal p{color:var(--sub);font-size:13px}.modal-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:20px}.danger-btn{background:#ad4059;border:0;color:#fff;border-radius:10px;padding:10px 13px;font-size:12px;font-weight:800}.mobile-only{display:none}.progress-bar{height:4px;background:#e8e4e5;border-radius:5px;overflow:hidden;margin-bottom:24px}.progress-bar .fill{height:100%;background:#b65984;transition:width .2s}.feed-wall{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.footer-note{margin:28px 0 0;font-size:10px;color:#a0a0a4}.card img{width:100%}.file-panel{background:#faf8f9;border:1px solid #ece5e7;padding:17px;border-radius:13px;margin-bottom:11px}.file-panel h4{margin:0 0 7px;font:800 13px Manrope}.file-panel p{font-size:12px;color:#666;margin:5px 0}.checklist label{display:block;padding:7px 0;font-size:13px}.checklist input{accent-color:var(--accent);margin-right:8px} .grammar-pair{background:#f9f7f7;padding:15px;border:1px solid #eee8ea;border-radius:10px}.grammar-pair h4{margin:0 0 10px;font-size:12px}.grammar-pair p{font-size:13px;margin:8px 0}.photo-caption{display:block;color:var(--muted);font-size:10px;margin-top:5px}.story-text{font-size:14px;line-height:1.9}.story-text p{margin:0 0 15px}.letter-head{display:flex;gap:11px;align-items:center;padding:15px;border-bottom:1px solid #eee}.letter-body{padding:18px}.image-fallback{background:#ddd;color:#333}.bookmark-btn{background:transparent;border:0;font-size:18px}.web-alert{font-size:11px;color:#767178;margin-top:8px}
+@media(max-width:1050px){.rail{width:228px;flex-basis:228px}.reading{padding:28px 26px 36px}.topbar{padding:0 26px}.content-surface{padding:25px}}@media(max-width:750px){.rail{position:fixed;z-index:60;transform:translateX(-105%);transition:transform .24s ease;box-shadow:15px 0 40px #0001}.rail.open{transform:translateX(0)}.mobile-only{display:inline-flex}.topbar{height:65px;padding:0 14px}.eyebrow{font-size:9px;letter-spacing:.7px}.saved{display:none}.top-left,.top-right{gap:7px}.reading{padding:22px 14px 42px}.content-surface{padding:18px 14px}.page-heading{font-size:27px;letter-spacing:-.8px}.grid3{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}.feed-wall{grid-template-columns:repeat(2,1fr)}.match-grid{grid-template-columns:1fr}.footer-nav{gap:6px}.nav-button{padding:12px 10px;font-size:11px}.actionbar{align-items:stretch;flex-direction:column}.actions{justify-content:stretch}.actions button{flex:1}.mini-table{font-size:11px}.mini-table td,.mini-table th{padding:8px 5px}}@media(max-width:430px){.feed-wall,.grid3{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}.photo{height:180px}.opts{flex-direction:column}.opts .option{width:100%}.actionbar .actions{flex-direction:column}.match-row{align-items:stretch;flex-direction:column}.choice-select{max-width:none}.topbar .subtle-btn{font-size:10px;padding:8px}}
+
+/* October 2026: quiet, student-first interface */
+:root {--bg:#fafafa;--surface:#fff;--ink:#25252a;--line:#ececee;--soft:#f7f7f8;--accent:#5f5360;--good:#247d56;--bad:#c3484e}
+.rail {background:#fff;border-right:1px solid #ededf0;width:236px;flex-basis:236px}
+.brand {margin:23px 18px 20px;gap:9px}.brand-mark {width:36px;height:36px;border-radius:10px;font-size:12px}.brand strong {font-size:12px;letter-spacing:.4px}.brand small {font-size:9px;letter-spacing:.5px}
+.rail .unit-label,.rail .rail-foot,.rail .chapter small {display:none!important}
+.chapter {padding:10px 14px!important;gap:9px!important;margin:0 7px!important;border-radius:9px!important}
+.chapter .no {font-size:10px;opacity:.58}
+.chapter-title {font-size:12px!important;line-height:1.35!important}
+.topbar {height:62px!important;background:#fff!important;border-bottom:1px solid #f0f0f0!important}
+.top-brand {color:#929197;font-size:10px;letter-spacing:.4px;font-weight:600}
+.topbar .subtle-btn {border:0!important;background:transparent!important;color:#747279!important;font-size:12px!important}
+.reading {padding-top:38px}.page-heading {font-size:clamp(25px,3vw,35px);font-weight:800;line-height:1.13;letter-spacing:-1.15px;margin:0 0 26px!important}
+.content-surface {border:1px solid #eee!important;box-shadow:none!important;padding:29px!important}
+.section {margin-bottom:31px}.section-title {font-size:15px!important;letter-spacing:-.22px}.intro {color:#565760!important}
+.callout {background:#f8f8f9;border-color:#eeeeef;padding:13px 16px;border-radius:11px}
+.callout strong {letter-spacing:.22px;font-size:10px}.callout p {font-size:13px}
+.frame,.mini-card,.card,.question,.speech-bubble,.post {border-color:#ececef!important;box-shadow:none!important}
+.question,.sentence {background:#fafafb}
+.option:has(input:checked) {background:#f3f2f5;border-color:#bcb5c4}
+.option.correct,.option:has(input:checked).correct {border-color:#4ea478!important;background:#e9f7ef!important;color:#1a6443}
+.option.incorrect,.option:has(input:checked).incorrect {border-color:#df8b8b!important;background:#fff0f0!important;color:#9e3439}
+.choice-select.correct,.answer-input.correct,.connect-card.matched-right {border-color:var(--good)!important;background:#eaf7ee!important;color:#185b3e}
+.choice-select.incorrect,.answer-input.incorrect,.connect-card.matched-wrong {border-color:var(--bad)!important;background:#fff0f0!important;color:#a03439}
+.correction {font-size:11px;display:none;margin:4px 0 0;font-weight:600}.correction.right {color:var(--good)}.correction.wrong {color:var(--bad)}
+.answered-right .chip-options .selected {background:#eaf7ee;border-color:var(--good)}
+.answered-wrong .chip-options .selected {background:#fff0f0;border-color:var(--bad)}
+button:disabled.connect-card,button:disabled.small-choice {opacity:1;cursor:default}
+.inline-sentence {line-height:2.5;font-size:13px;padding:12px 13px;margin-bottom:7px;background:#fafafb;border:1px solid #ededee;border-radius:10px}
+.inline-answer {display:inline-block;vertical-align:middle;width:clamp(115px,24vw,245px);height:38px;padding:7px 10px;margin:0 4px}
+.inline-sentence .correction {line-height:1.4}
+.connect-widget {margin:12px 0 20px}.connect-help {font-size:12px;color:#8b8b90;margin:4px 0 12px}
+.connect-board {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18%;position:relative;align-items:start}
+.connect-lines {position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:1}
+.connect-col {display:flex;flex-direction:column;gap:9px;min-width:0;position:relative;z-index:2}
+.connect-row {display:flex;flex-direction:column;gap:1px;min-width:0}
+.connect-card {display:flex;align-items:center;gap:10px;min-height:54px;width:100%;text-align:left;border:1px solid #e5e5e8;border-radius:10px;padding:11px 12px;background:#fff;color:#3d3e44;font-size:12px;line-height:1.45;transition:border-color .12s,background .12s;}
+.connect-letter {display:inline-grid;place-items:center;min-width:22px;height:22px;border-radius:6px;background:#f1f1f3;color:#888;font-size:10px;font-weight:800;flex:none}
+.connect-card.pair-selected,.connect-card.pair-selected:hover {border-color:#796174;background:#f2edf2;box-shadow:0 0 0 2px #dfd2dd}
+.connect-card:not(:disabled):hover {border-color:#a9a0a9}
+.connect-row .correction {padding-left:5px;font-size:10px}
+.sort-chip {touch-action:none;user-select:none;-webkit-user-select:none;cursor:grab;border:1px solid #d9d9df;background:#fff;border-radius:9px;padding:10px 12px}
+.sort-chip.chosen {border-color:#726071!important;background:#eee9ee!important}
+.sort-zone {background:#fff;border:1px dashed #d6d4d7;min-height:164px;cursor:pointer;transition:background .16s,border .16s}
+.sort-zone.ready,.sort-zone.over {background:#f6f0f4;border-color:#93828e}
+.sort-pool {background:#f8f8f8;padding:15px;min-height:76px}
+.sort-note {font-size:11px;color:#87858a}
+.drag-ghost {position:fixed;z-index:10000;background:#f9f1f5;border:1px solid #92838f;border-radius:10px;padding:10px 12px;font-size:12px;pointer-events:none;box-shadow:0 6px 23px #0002}
+.nav-button.primary {background:#28272b!important;border-color:#28272b!important}
+.footer-nav {margin:23px 0 15px}.dots {font-size:10px;color:#96959a}
+.post-body {background:white}
+@media(max-width:1050px){.rail{width:210px;flex-basis:210px}}
+@media(max-width:750px){.topbar{height:58px!important}.reading{padding-top:25px}.page-heading{font-size:26px}.content-surface{padding:17px!important}.connect-board{gap:10%}}
+@media(max-width:430px){.connect-board{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8%}.connect-card{font-size:11px;padding:8px;gap:6px;min-height:64px}.connect-letter{min-width:17px;height:18px;font-size:9px}.inline-answer{width:48%;max-width:180px}}
+
+body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}.brand strong,.section-title,.sort-zone h4,.brand-mark,.file-panel h4{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+
+/* Lesson 1 — interactive polish */
+.inline-question{padding:13px 15px;border:1px solid #ececef;border-radius:11px;background:#fafafb;margin:9px 0;font-size:13.5px;line-height:2.25}
+.inline-question-body{display:block;white-space:normal;overflow-wrap:break-word}
+.inline-select.choice-select{display:inline-block;vertical-align:baseline;max-width:none;min-width:96px;width:auto;margin:0 5px;padding:6px 28px 6px 9px;line-height:1.5;height:36px;border-radius:8px;white-space:nowrap;font-size:13px}
+.inline-question .correction{line-height:1.35}
+.group-chat{border:1px solid var(--line);border-radius:15px;background:#faf9fb;padding:18px;overflow:hidden}
+.group-chat .speech-bubble{background:#fff;border:1px solid #eee9ef;margin:14px 0;font-size:13px;line-height:2}
+.group-chat .inline-question{background:transparent;border:0;padding:0;margin:0 2px;display:inline;line-height:2.7}
+.group-chat .inline-question-body{display:inline}
+.group-chat .correction{font-size:11px;line-height:1.3}
+.word-bank.drag-bank{padding:11px;border:1px solid #eae7eb;background:#f8f7f8;border-radius:11px;align-items:center;margin:14px 0}
+.bank-instruction{font-size:9px;letter-spacing:.8px;font-weight:800;color:#8d8490;margin:0 6px 0 0}
+.draggable-word{cursor:grab;touch-action:none;border:1px solid #ddd8dd;transition:background .15s,transform .15s;background:#fff}
+.draggable-word:hover,.draggable-word.chosen{background:#f2e9f0;border-color:#a894a5;transform:translateY(-1px)}
+.bank-sentence{padding:12px 14px;margin:9px 0;border:1px solid #e9e8eb;border-radius:10px;background:#fafafb;line-height:2.3;overflow-wrap:break-word;font-size:13px}
+.bank-input{display:inline-block;vertical-align:middle;width:clamp(132px,35%,260px);height:36px;margin:0 4px;padding:5px 9px}
+.bank-sentence .correction{line-height:1.35}
+.matches-done{margin:16px 0 5px;border-top:1px solid #edeaee;padding-top:12px;min-height:43px}
+.matches-done.empty{display:none}
+.matches-done-title{font-size:10px;color:#6e7b71;font-weight:800;letter-spacing:.7px;margin-bottom:10px}
+.matched-pairs{display:grid;gap:9px}
+.match-complete-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;align-items:center;gap:11px;padding:9px;border:1px solid #d5e9dd;background:#f1f9f4;border-radius:11px;min-width:0;animation:pair-arrival .35s ease-out}
+.match-complete-row .connect-card{border-color:#a4d1b4;background:#f7fcf8;color:#295d40;min-height:48px;cursor:default}
+.match-complete-row .pair-status{font-size:10px;color:#247d56;white-space:nowrap;font-weight:800}
+@keyframes pair-arrival{from{opacity:.5;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+.connect-row{transition:opacity .3s,transform .3s}
+.reorder-question{padding:15px;margin:12px 0;border:1px solid #e8e8eb;border-radius:13px;background:#fafafb}
+.reorder-title{font-weight:800;font-size:12px;margin-bottom:10px}
+.reorder-tray,.reorder-target{display:flex;align-items:center;flex-wrap:wrap;gap:8px;min-height:55px;padding:10px;border:1px dashed #d7d0d8;border-radius:10px;background:#fff}
+.reorder-tray{margin-bottom:10px}
+.reorder-target{background:#f6f1f5;border-color:#bfb0bd;color:#8e8190;font-size:12px}
+.reorder-tile{border:1px solid #d7cbd4;border-radius:8px;padding:7px 10px;background:#fff;cursor:grab;color:#3f3641;font-size:12px;font-weight:700;touch-action:none}
+.reorder-tile.in-answer{background:#efe5ed;border-color:#b3a1b2}
+.reorder-tray .reorder-tile.in-answer{opacity:.3;pointer-events:none}
+.reorder-actions{display:flex;gap:9px;justify-content:flex-end;margin-top:10px}
+.reorder-actions button{padding:9px 14px}
+.reorder-question.answered-right .reorder-target{background:#eaf7ee;border-color:#61ac83}
+.reorder-question.answered-wrong .reorder-target{background:#fff3f3;border-color:#c77777}
+.magazine-reading{border:1px solid #e6e2e4;border-radius:14px;overflow:hidden;background:#fff;margin:18px 0}
+.magazine-reading>.photo{height:190px}
+.magazine-tag{font-size:10px;padding:14px 18px;font-weight:800;letter-spacing:1.1px;color:#8c6e82}
+.magazine-copy{padding:18px 22px 24px}.magazine-copy h3{font-size:clamp(20px,2.7vw,28px);line-height:1.23;font-family:Georgia,serif;font-weight:700}
+.article-byline{font-size:11px!important;color:#747078!important;margin-bottom:18px!important}
+.magazine-copy .story-text{line-height:1.85}
+@media(max-width:650px){.match-complete-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:7px}.match-complete-row .pair-status{grid-column:1/-1}.group-chat{padding:10px}.bank-input{max-width:200px}.magazine-copy{padding:15px}}
+
+
+/* Lesson 2 additions */
+.lesson-audio{display:flex;align-items:center;gap:10px;padding:14px 15px;border:1px solid #e8e8eb;border-radius:12px;background:#fafafb;margin:12px 0 18px}.audio-icon{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#2b2a2e;color:#fff;font-size:11px;flex:none}.audio-main{display:flex;flex-direction:column;min-width:0;margin-right:auto}.audio-main strong{font-size:11px;letter-spacing:.7px}.audio-main span{font-size:11px;color:#8b8b91;margin-top:2px}.inventory-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:13px 0 17px}.inventory-card{min-height:98px;border:1px solid #e9e9ec;border-radius:12px;background:#fafafb;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px;gap:4px}.inventory-card span{font-size:27px}.inventory-card b{font-size:12px}.magazine-copy{padding:22px}.magazine-copy h3{font-size:23px!important;margin-bottom:16px!important}.group-chat .inline-question{display:inline-block!important;vertical-align:middle}.group-chat .inline-question-body{display:inline-flex!important;align-items:center}.group-chat .inline-select{margin:0 4px!important}.file-panel{background:#fafafb!important}.grid3 .card .photo{height:145px}.checklist{display:grid;gap:2px}@media(max-width:750px){.lesson-audio{flex-wrap:wrap}.audio-main{width:calc(100% - 52px)}.inventory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:430px){.inventory-grid{grid-template-columns:1fr 1fr}.lesson-audio .tool-btn{flex:1}}
+
+/* Lesson 3 additions */
+.visual-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin:13px 0 18px}.visual-card{border:1px solid #e8e8eb;border-radius:12px;background:#fff;overflow:hidden}.visual-card .photo{height:145px}.visual-card-copy{padding:11px 12px}.visual-card-copy b{display:block;font-size:12px;margin-bottom:3px}.visual-card-copy span{font-size:11px;color:#77777e}.story-lines{display:grid;gap:8px;margin:12px 0}.story-line{padding:13px 15px;border:1px solid #e9e9ec;border-radius:10px;background:#fafafb;font-size:13px;line-height:1.65}.story-line b{color:#644f61}.video-thumb{display:block;width:100%;max-height:410px;object-fit:cover;border-radius:13px;border:1px solid #e8e8eb;margin:10px 0 16px}.prompt-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0}.prompt-card{border:1px solid #e7e7ea;border-radius:11px;padding:13px;background:#fafafb;min-height:88px}.prompt-card strong{font-size:12px}.prompt-card p{font-size:11px;color:#777;margin:5px 0 0}.micro-label{font-size:9px;letter-spacing:.9px;font-weight:800;color:#8b7a88;text-transform:uppercase}.compact-list{margin:8px 0 0;padding-left:20px}.compact-list li{margin:6px 0}.youtube{margin-top:10px}
+.rule-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.rule-card{border:1px solid #e8e8eb;border-radius:12px;padding:15px;background:#fafafb}.rule-card h3{font-size:13px;margin:0 0 9px}.rule-card p{font-size:12px;margin:6px 0}.rule-form{font-size:11px;color:#6f6f76;border-top:1px solid #e7e7ea;margin-top:10px;padding-top:9px}.story-cloze{border:1px solid #e7e7ea;border-radius:13px;background:#fff;padding:20px;font-size:14px;line-height:2.35}.story-cloze p{margin:0 0 14px}.story-cloze p:last-child{margin-bottom:0}.story-choice-wrap{display:inline-block;vertical-align:middle;margin:0 2px;line-height:1.3}.story-select{display:inline-block!important;width:auto!important;max-width:230px!important;min-width:118px!important;margin:0 2px!important;padding:6px 27px 6px 9px!important;height:36px!important}.story-choice-wrap .correction{max-width:240px;line-height:1.3}.picture-focus{border:1px solid #e8e8eb;border-radius:13px;overflow:hidden;background:#fff;margin:12px 0 16px}.picture-focus .photo{height:330px}.picture-prompts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:12px 0}.picture-prompt{padding:11px 12px;border:1px solid #e9e9ec;border-radius:10px;background:#fafafb;font-size:12px}.recycle-tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.recycle-tags span{font-size:10px;padding:5px 8px;border-radius:999px;background:#f1f1f3;color:#66646a;font-weight:700}
+@media(max-width:750px){.visual-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.prompt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:430px){.visual-grid,.prompt-grid,.rule-grid,.picture-prompts{grid-template-columns:1fr}.visual-card .photo{height:190px}.picture-focus .photo{height:230px}.story-cloze{padding:14px;font-size:13px}.story-select{max-width:190px!important}}
+
+
+/* Lesson 3 typography update */
+body{font-size:16px!important;line-height:1.65!important}
+.chapter-title{font-size:13px!important}.page-heading{font-size:clamp(27px,3vw,37px)!important}
+.section-title{font-size:16px!important}.intro{font-size:16px!important}.section p,.card p,.post p{font-size:14px!important}
+.question-title,.option,.inline-question,.bank-sentence,.match-row,.story-line{font-size:14px!important}
+.text-input,.answer-input,.choice-select{font-size:14px!important}.small,.muted.small{font-size:13px!important}
+.callout p,.speech-bubble{font-size:14px!important}.compact-list li{font-size:14px}
+.rule-card h3{font-size:14px!important}.rule-card p{font-size:13.5px!important}.rule-form{font-size:12.5px!important}
+.picture-prompt{font-size:13px!important}.prompt-card strong{font-size:13px!important}.prompt-card p{font-size:12px!important}
+.story-cloze{font-size:15px!important;line-height:2.45!important}.story-select{font-size:14px!important;height:38px!important}
+.irregular-table{width:100%;border-collapse:collapse;margin:12px 0 4px;font-size:14px}.irregular-table th,.irregular-table td{padding:11px 10px;border-bottom:1px solid #ececee;text-align:left;vertical-align:middle}.irregular-table th{font-size:11px;letter-spacing:.6px;color:#74747a;background:#fafafb}.irregular-table .story-select{min-width:130px!important;max-width:210px!important}
+.quick-rule{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:12px 0}.quick-rule>div{padding:12px 13px;border:1px solid #e9e9ec;border-radius:10px;background:#fafafb;font-size:13px}.quick-rule b{display:block;margin-bottom:4px}
+@media(max-width:650px){.quick-rule{grid-template-columns:1fr}.irregular-table{font-size:13px}.irregular-table th,.irregular-table td{padding:9px 6px}}
+
+</style></head><body><div id="app"><aside class="rail" id="rail"><div class="brand"><div class="brand-mark">NG<span>✳</span></div><div><strong>THE NIGHT EVERYTHING WENT WRONG</strong><small>LESSON 3</small></div></div><nav id="chapterList" aria-label="Lesson pages"></nav></aside><main class="main"><header class="topbar"><div class="top-left"><button id="mobileMenu" class="icon-btn mobile-only" aria-label="Toggle menu">☰</button></div><div class="top-right"><button id="reset" class="subtle-btn" title="Reset progress">↻ Reset</button></div></header><div class="reading"><div id="intro"></div><article id="content" aria-live="polite"></article><footer class="footer-nav"><button id="prev" class="nav-button secondary">← Back</button><div class="dots" id="progressNum"></div><button id="next" class="nav-button primary">Next page →</button></footer></div></main></div><div id="confirmModal" class="modal-backdrop hidden" role="dialog" aria-modal="true"><div class="modal"><h3>Reset lesson progress?</h3><p>This will clear all your answers, choices and notes across all lesson pages.</p><div class="modal-actions"><button id="cancelReset" class="outline-btn">Cancel</button><button id="confirmReset" class="danger-btn">Reset everything</button></div></div></div><script>'use strict';
+const STORAGE='lesson-3-night-went-wrong-v3';
+let state={values:{},visited:{},attempts:{},solved:{},lastTried:{}};try{state={...state,...JSON.parse(localStorage.getItem(STORAGE)||'{}')}}catch(e){}
+const save=()=>{try{localStorage.setItem(STORAGE,JSON.stringify(state))}catch(e){}};
+const vals=state.values;const key=(s)=>String(s).replace(/[^a-z0-9_-]/ig,'_');
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const norm=s=>String(s??'').toLowerCase().replace(/[“”‘’]/g,"'").replace(/[^a-z0-9' ]+/g,' ').replace(/\s+/g,' ').trim();
+const ANSWERS={};
+const OPTION_ORDERS={};
+const bind=(id,ans,type='one')=>{ANSWERS[id]={ans,type};return id};
+// Stable per-question shuffling means answers never jump around between visits.
+const stableShuffle=(id,source)=>{
+  const arr=source.map((value,original)=>({value,original}));
+  let seed=2166136261;
+  for(const c of id)seed=Math.imul(seed^c.charCodeAt(0),16777619)>>>0;
+  for(let i=arr.length-1;i>0;i--){seed=(Math.imul(seed,1664525)+1013904223)>>>0;const j=seed%(i+1);[arr[i],arr[j]]=[arr[j],arr[i]];}
+  // Prevent the original unshuffled question from occasionally appearing unchanged.
+  if(arr.length>2&&arr.every((x,i)=>x.original===i))arr.push(arr.shift());
+  // Deliberately non-sequential warm-up keys: C, A, B.
+  const warmup={p1d1:[1,2,0],p1d2:[1,2,0],p1d3:[0,2,1]};
+  if(warmup[id]&&arr.length===3)return warmup[id].map(i=>({value:source[i],original:i}));
+  return arr;
+};
+const choicesFor=(id,opts,correct)=>{
+  if(correct===null||correct===undefined)return {opts,correct};
+  const order=stableShuffle(id,opts);
+  OPTION_ORDERS[id]=order.map(x=>x.original);
+  return {opts:order.map(x=>x.value),correct:Array.isArray(correct)?correct.map(i=>order.findIndex(x=>x.original===i)):order.findIndex(x=>x.original===correct)};
+};
+const S=(h,body)=>`<section class="section"><h2 class="section-title">${h}</h2>${body}</section>`;
+const intro=(p)=>`<p class="intro">${p}</p>`;
+const box=(c,cls='frame')=>`<div class="${cls}">${c}</div>`;
+const tip=(title,arr)=>`<div class="callout"><strong>${esc(title)}</strong>${arr.map(x=>`<p>${x}</p>`).join('')}</div>`;
+const divider=()=>'<div class="separator"></div>';
+const note=(x)=>`<p class="muted small">${x}</p>`;
+const input=(id,label='',placeholder='Your answer',answers=null,lines=1)=>{if(answers!==null)bind(id,answers,'text');let v=esc(vals[id]||'');return `<div class="input-row">${label?`<label class="input-label" for="${key(id)}">${label}</label>`:''}${lines>1?`<textarea class="text-input" id="${key(id)}" data-k="${id}" rows="${lines}" placeholder="${esc(placeholder)}">${v}</textarea>`:`<input class="answer-input" id="${key(id)}" data-k="${id}" value="${v}" placeholder="${esc(placeholder)}">`}<div class="correction" data-correction="${id}"></div></div>`};
+const mc=(id,q,opts,correct=null,vertical=true)=>{({opts,correct}=choicesFor(id,opts,correct));if(correct!==null)bind(id,correct,'one');return `<div class="question" data-block="${id}"><div class="question-title">${q}</div><div class="opts ${vertical?'vertical':''}">${opts.map((o,j)=>`<label class="option"><input type="radio" name="${id}" data-k="${id}" value="${j}" ${String(vals[id])===String(j)?'checked':''}><span>${o}</span></label>`).join('')}</div><div class="correction" data-correction="${id}"></div></div>`};
+const checklist=(id,q,opts,correct=null)=>{({opts,correct}=choicesFor(id,opts,correct));if(correct!==null)bind(id,correct,'many');const chosen=Array.isArray(vals[id])?vals[id]:[];return `<div class="question" data-block="${id}"><div class="question-title">${q}</div><div class="opts vertical">${opts.map((o,j)=>`<label class="option"><input type="checkbox" data-k="${id}" value="${j}" ${chosen.includes(j)?'checked':''}><span>${o}</span></label>`).join('')}</div><div class="correction" data-correction="${id}"></div></div>`};
+const dropdown=(id,label,opts,ans=null)=>{({opts,correct:ans}=choicesFor(id,opts,ans));if(ans!==null)bind(id,ans,'one');let v=vals[id]??'';return `<div class="match-row" data-block="${id}"><span>${label}</span><div><select data-k="${id}" class="choice-select"><option value="">Choose...</option>${opts.map((o,i)=>`<option value="${i}" ${String(v)===String(i)?'selected':''}>${esc(o)}</option>`).join('')}</select><div class="correction" data-correction="${id}"></div></div></div>`};
+const matches=(prefix,terms,defs,keyArr)=>{
+ const ordered=stableShuffle(prefix+'-definitions',defs),d=ordered.map(x=>x.value);
+ const answers=keyArr.map(i=>ordered.findIndex(x=>x.original===i));
+ return `<div class="connect-widget" data-match-prefix="${prefix}"><div class="connect-help">Select a word and then its meaning. Correct pairs drop to the completed area below.</div><div class="connect-board"><svg class="connect-lines" aria-hidden="true"></svg><div class="connect-col connect-words">${terms.map((word,i)=>{const id=prefix+i;bind(id,answers[i],'one');return `<div class="connect-row" data-match-row="${id}"><button type="button" class="connect-card" data-connect-prefix="${prefix}" data-connect-side="left" data-connect-index="${i}"><span class="connect-letter">${i+1}</span>${word}</button><div class="correction" data-correction="${id}"></div></div>`}).join('')}</div><div class="connect-col connect-defs">${d.map((def,i)=>`<button type="button" class="connect-card" data-connect-prefix="${prefix}" data-connect-side="right" data-connect-index="${i}"><span class="connect-letter">${String.fromCharCode(65+i)}</span>${def}</button>`).join('')}</div></div><div class="matches-done" aria-label="Completed matches"><div class="matches-done-title">MATCHED PAIRS</div><div class="matched-pairs"></div></div></div>`;
+};
+const inlineGapset=(prefix,rows,answers)=>{
+ const words=stableShuffle(prefix+'-word-bank',answers.map(a=>Array.isArray(a)?a[0]:a)).map(x=>x.value);
+ return `<div class="word-bank drag-bank" data-bank="${prefix}"><span class="bank-instruction">DRAG OR TAP A WORD</span>${words.map(word=>`<button type="button" draggable="true" class="word-chip draggable-word" data-bank-prefix="${prefix}" data-bank-word="${esc(word)}">${esc(word)}</button>`).join('')}</div>`+
+ rows.map((r,i)=>{const id=prefix+i;bind(id,answers[i],'text');const [before,after]=r.split('______');return `<div class="inline-sentence" data-block="${id}"><span>${before}</span> <input aria-label="Missing word for sentence ${i+1}" class="answer-input inline-answer bank-input" data-bank-slot="${prefix}" data-k="${id}" value="${esc(vals[id]||'')}" placeholder="Drop or type" autocomplete="off"> <span>${after||''}</span><div class="correction" data-correction="${id}"></div></div>`}).join('');
+};
+const gapset=(prefix,rows,answers)=>rows.map((r,i)=>input(prefix+i,r, 'Write the missing word(s)',answers?answers[i]:null)).join('');
+const chipQuiz=(id,q,labels,correct=null)=>{({opts:labels,correct}=choicesFor(id,labels,correct));if(correct!==null)bind(id,correct,'one');return `<div class="question" data-block="${id}"><div class="question-title">${q}</div><div class="chip-options">${labels.map((x,i)=>`<button class="small-choice ${String(vals[id])===String(i)?'selected':''}" data-chip="${id}" data-val="${i}" type="button">${esc(x)}</button>`).join('')}</div><div class="correction" data-correction="${id}"></div></div>`};
+const photoSequence={};
+// Direct public-photo-CDN URLs: Unsplash and Pexels. Nothing needs to exist in assets/gallery.
+const PHOTO_URLS={
+ fashion:[['https://images.unsplash.com/photo-1483985988355-763728e1935b?w=960&q=82','https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=960'],['https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=960','https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=960&q=82'],['https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=960&q=82','https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=960']],
+ beauty:[['https://images.pexels.com/photos/3373736/pexels-photo-3373736.jpeg?auto=compress&cs=tinysrgb&w=960','https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=960&q=82'],['https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=960&q=82','https://images.pexels.com/photos/264794/pexels-photo-264794.jpeg?auto=compress&cs=tinysrgb&w=960']],
+ cinema:[['https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=960&q=82','https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=960'],['https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=960','https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=960&q=82'],['https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=960&q=82','https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=960']],
+ cat:[['https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&w=960','https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=960&q=82']],
+ camera:[['https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?w=960&q=82','https://images.pexels.com/photos/1983037/pexels-photo-1983037.jpeg?auto=compress&cs=tinysrgb&w=960'],['https://images.pexels.com/photos/1983037/pexels-photo-1983037.jpeg?auto=compress&cs=tinysrgb&w=960','https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=960&q=82']],
+ coffee:[['https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=960','https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=960&q=82']],
+ room:[['https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=960&q=82','https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=960'],['https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=960','https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=960&q=82']],
+ style:[['https://images.pexels.com/photos/994517/pexels-photo-994517.jpeg?auto=compress&cs=tinysrgb&w=960','https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=960&q=82'],['https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=960&q=82','https://images.pexels.com/photos/994517/pexels-photo-994517.jpeg?auto=compress&cs=tinysrgb&w=960']],
+ fun:[['https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=960&q=82','https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=960']],
+ food:[['https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=960','https://images.unsplash.com/photo-1547592180-85f173990554?w=960&q=82']]
+};
+const image=(id,alt,cls='')=>{
+ const seq=photoSequence[id]||0;photoSequence[id]=seq+1;
+ const [src,backup]=(PHOTO_URLS[id]||PHOTO_URLS.fashion)[seq%(PHOTO_URLS[id]||PHOTO_URLS.fashion).length];
+ const placeholder=lessonIllustration(alt);
+ return `<img class="photo ${cls}" style="background-image:url('${placeholder}');background-size:cover;background-position:center" src="${src}" data-backup="${backup}" alt="${esc(alt)}" loading="lazy" referrerpolicy="no-referrer" onerror="handleLessonImage(this)">`;
+};
+const lessonIllustration=alt=>{
+ const label=String(alt||'Lesson photograph').slice(0,45).replace(/[&<>"']/g,'');
+ const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540"><rect width="960" height="540" fill="#eee8ed"/><circle cx="810" cy="150" r="155" fill="#ddcbd7"/><rect x="60" y="85" width="500" height="355" rx="22" fill="#cbb4c4"/><circle cx="190" cy="193" r="72" fill="#f7f1f5"/><path d="M 92 413 L 265 245 L 354 339 L 443 278 L 546 427" stroke="#faf8fa" stroke-width="27" stroke-linecap="round" stroke-linejoin="round" fill="none"/><text x="60" y="498" font-family="Arial" font-size="25" fill="#574754">${label}</text></svg>`;
+ return 'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(svg);
+};
+window.handleLessonImage=img=>{
+ if(img.dataset.fallbackStage!=='secondary'){
+  img.dataset.fallbackStage='secondary';img.src=img.dataset.backup;return;
+ }
+ img.onerror=null;img.dataset.fallbackStage='illustrated';
+ img.src=lessonIllustration(img.alt);
+};
+const inlineChoice=(id,sentence,options,answer)=>{
+ const {opts,correct}=choicesFor(id,options,answer);bind(id,correct,'one');
+ const pieces=sentence.split('___');const v=vals[id]??'';
+ return `<div class="inline-question" data-block="${id}"><div class="inline-question-body"><span>${esc(pieces[0])}</span><select class="inline-select choice-select" aria-label="Choose the verb form" data-k="${id}" style="width:calc(${Math.min(40,Math.max(7,(v===''?'Choose…':opts[Number(v)]||'Choose…').length))}ch + 43px)"><option value="">Choose…</option>${opts.map((o,i)=>`<option value="${i}" ${String(v)===String(i)?'selected':''}>${esc(o)}</option>`).join('')}</select><span>${esc(pieces.slice(1).join('___'))}</span></div><div class="correction" data-correction="${id}"></div></div>`;
+};
+const storyChoice=(id,options,answer)=>{
+ const {opts,correct}=choicesFor(id,options,answer);bind(id,correct,'one');
+ const v=vals[id]??'';
+ return `<span class="story-choice-wrap" data-block="${id}"><select class="story-select choice-select" aria-label="Choose the correct form" data-k="${id}"><option value="">Choose…</option>${opts.map((o,i)=>`<option value="${i}" ${String(v)===String(i)?'selected':''}>${esc(o)}</option>`).join('')}</select><span class="correction" data-correction="${id}"></span></span>`;
+};
+const bankGapset=(prefix,rows,answers)=>{
+ const expanded=answers.map(a=>Array.isArray(a)?a[0]:a);
+ const shuffled=stableShuffle(prefix+'-bank',expanded).map(x=>x.value);
+ return `<div class="word-bank drag-bank" data-bank="${prefix}"><span class="bank-instruction">DRAG OR TAP A WORD</span>${shuffled.map((word,i)=>`<button type="button" draggable="true" class="word-chip draggable-word" data-bank-word="${esc(word)}" data-bank-prefix="${prefix}">${esc(word)}</button>`).join('')}</div>`+
+ rows.map((r,i)=>{const id=prefix+i;bind(id,answers[i],'text');const pieces=r.split('______');return `<div class="bank-sentence" data-block="${id}"><span>${esc(pieces[0])}</span><input class="answer-input bank-input" data-k="${id}" data-bank-slot="${prefix}" aria-label="Missing phrase ${i+1}" placeholder="Drop or type" value="${esc(vals[id]||'')}"><span>${esc(pieces.slice(1).join('______'))}</span><div class="correction" data-correction="${id}"></div></div>`}).join('');
+};
+const reorderActivity=(prefix,rows,answers)=>rows.map((row,i)=>{
+ const id=prefix+i;bind(id,answers[i],'reorder');
+ const pieces=row.replace(/^\d+\.\s*/, '').split(' / ').map(x=>x.trim()),order=stableShuffle(id+'-tiles',pieces).map(x=>x.value);
+ const picked=Array.isArray(vals[id])?vals[id]:[];
+ return `<div class="reorder-question" data-reorder="${id}" data-block="${id}"><div class="reorder-title">${i+1}. Arrange the words</div><div class="reorder-tray">${order.map((w,j)=>`<button type="button" draggable="true" data-tile="${j}" data-reorder-id="${id}" class="reorder-tile ${picked.includes(j)?'in-answer':''}">${esc(w)}</button>`).join('')}</div><div class="reorder-target" data-reorder-target="${id}" aria-label="Drop words here in order">${picked.length?'':'Drop or tap the words here in the correct order'}</div><div class="reorder-actions"><button type="button" class="outline-btn" data-reorder-clear="${id}">CLEAR</button><button type="button" class="nav-button primary" data-reorder-check="${id}">CHECK</button></div><div class="correction" data-correction="${id}"></div></div>`;
+}).join('');
+const card=(title,txt,id,alt)=>`<div class="card">${image(id,alt)}<h3>${title}</h3><p>${txt}</p></div>`;
+const feedPost=(handle,caption,id,alt)=>`<div class="post"><div class="post-head"><span class="avatar">${handle.slice(1,2).toUpperCase()}</span><div><div class="handle">${handle}</div><div class="dim">Suggested for you</div></div><span style="margin-left:auto">···</span></div>${image(id,alt)}<div class="post-body">${caption}</div><div class="post-icons">♡ &nbsp; ♧ &nbsp; ↗ <span style="margin-left:auto">♧</span></div></div>`;
+const dialog=(who,text)=>`<div class="speech-bubble"><div class="bubble-speaker">${who}</div>${text}</div>`;
+const speech=(text)=>`<div class="speakline"><span>${text}</span><button type="button" class="tool-btn" data-speak="${esc(text.replace(/<[^>]*>/g,''))}" aria-label="Listen">▶ Listen</button></div>`;
+const sort=(id,items,zones,correct)=>{if(correct!==null)bind(id,correct,'sort');let v=vals[id]||items.map(()=>-1);if(!Array.isArray(v)||v.length!==items.length)v=items.map(()=>-1);let html=`<div class="sort-widget" data-sort="${id}"><div class="sort-pool" data-zone="-1">${items.map((x,i)=>v[i]===-1?`<button draggable="true" class="sort-chip" data-item="${i}" data-sortkey="${id}" type="button">${esc(x)}</button>`:'').join('')}</div><div class="grid3">`;zones.forEach((z,zi)=>{html+=`<div class="sort-zone" data-zone="${zi}" role="button" tabindex="0"><h4>${esc(z[0])}</h4><p>${esc(z[1]||'')}</p><div class="zone-chips">${items.map((x,i)=>v[i]===zi?`<button draggable="true" type="button" data-sortkey="${id}" data-item="${i}" class="sort-chip">${esc(x)}</button>`:'').join('')}</div></div>`});html+='</div><p class="sort-note">Drag each topic into a category, or tap a topic and then tap its destination. Tap a placed topic to return it.</p>'+((correct!==null)?'<div class="reorder-actions"><button type="button" class="nav-button primary" data-sort-check="'+id+'">CHECK</button></div><div class="correction" data-correction="'+id+'"></div>':'')+'</div>';return html};
+const rating=(id,label)=>`<div class="slider-wrap"><div style="display:flex;justify-content:space-between;align-items:center;gap:9px"><strong style="font-size:12px">${label}</strong><span class="metric" data-rateout="${id}">${vals[id]??3}/5</span></div><input type="range" min="1" max="5" step="1" data-k="${id}" value="${vals[id]??3}"><div class="slider-mark"><span>Not me</span><span>Exactly me</span></div></div>`;
+const audioYT=()=>`<div class="youtube"><iframe title="Social media algorithms explained — CBC Kids News" src="https://www.youtube-nocookie.com/embed/F5tz887wXCY?rel=0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><a class="link-btn" href="https://www.youtube.com/watch?v=F5tz887wXCY" target="_blank" rel="noopener noreferrer">↗ Watch on YouTube if the embedded player is unavailable</a><p class="web-alert">The video is streamed directly from YouTube. An internet connection is required for playback.</p>`;
+// Lesson 2 media
+Object.assign(PHOTO_URLS,{
+ kitchen:[['https://images.pexels.com/photos/12513477/pexels-photo-12513477.jpeg?auto=compress&cs=tinysrgb&w=1200','https://images.pexels.com/photos/12513483/pexels-photo-12513483.jpeg?auto=compress&cs=tinysrgb&w=1200']],
+ apartment:[['https://images.pexels.com/photos/6782432/pexels-photo-6782432.jpeg?auto=compress&cs=tinysrgb&w=1200','https://images.pexels.com/photos/6489121/pexels-photo-6489121.jpeg?auto=compress&cs=tinysrgb&w=1200'],['https://images.pexels.com/photos/6969987/pexels-photo-6969987.jpeg?auto=compress&cs=tinysrgb&w=1200','https://images.pexels.com/photos/6032225/pexels-photo-6032225.jpeg?auto=compress&cs=tinysrgb&w=1200']],
+ roommates:[['https://images.pexels.com/photos/7683846/pexels-photo-7683846.jpeg?auto=compress&cs=tinysrgb&w=1200','https://images.pexels.com/photos/4778797/pexels-photo-4778797.jpeg?auto=compress&cs=tinysrgb&w=1200']],
+ groceries:[['https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1200','https://images.unsplash.com/photo-1547592180-85f173990554?w=1200&q=82']],
+ mess:[['https://images.pexels.com/photos/1454806/pexels-photo-1454806.jpeg?auto=compress&cs=tinysrgb&w=1200','https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1200&q=82']],
+ friends:[['https://images.pexels.com/photos/4778797/pexels-photo-4778797.jpeg?auto=compress&cs=tinysrgb&w=1200','https://images.pexels.com/photos/7683846/pexels-photo-7683846.jpeg?auto=compress&cs=tinysrgb&w=1200']]
+});
+
+const DIALOGUES={
+  guests:[
+    ['Masha','Kristina, how many people are coming tonight?'],
+    ['Kristina','Kirill, Polina and maybe two more. Why?'],
+    ['Masha',"Because there isn’t much food in the fridge. There’s a little cheese, some tomatoes, and that’s basically it."],
+    ['Kristina','What about the snacks I bought?'],
+    ['Masha',"There aren’t any. We finished them yesterday."],
+    ['Kristina','Okay. I can get groceries. Do we need much?'],
+    ['Masha','Not much. A few drinks, some bread, maybe fruit. But there are way too many dishes in the sink.'],
+    ['Kristina',"Those aren’t all mine."],
+    ['Masha','I know. My bad. But the living room is also a total mess. There are bags lying around everywhere.'],
+    ['Kristina',"Fine. You tidy up, I’ll do the dishes, then I’ll get groceries."],
+    ['Masha','And the laundry?'],
+    ['Kristina','Leave it. Nobody is coming here to inspect our laundry.'],
+    ['Masha','Fair. How much time do we have?'],
+    ['Kristina','Forty-five minutes.'],
+    ['Masha','Great. No pressure.']
+  ]
+};
+
+const audioDialogue=(id)=>`<div class="lesson-audio"><div class="audio-icon">▶</div><div class="audio-main"><strong>LISTENING</strong><span>01:20 · Masha & Kristina</span></div><button type="button" class="tool-btn" data-dialogue-play="${id}">Play</button><button type="button" class="tool-btn" data-dialogue-stop>Stop</button></div>`;
+function playDialogue(id){
+ if(!('speechSynthesis' in window)||!DIALOGUES[id])return;
+ speechSynthesis.cancel();
+ const voices=speechSynthesis.getVoices().filter(v=>v.lang.toLowerCase().startsWith('en'));
+ const female=voices.filter(v=>/female|samantha|victoria|serena|karen|moira|tessa|ava|susan|zira/i.test(v.name));
+ const v1=female[0]||voices[0],v2=female[1]||voices[1]||voices[0];
+ DIALOGUES[id].forEach(([who,line])=>{const u=new SpeechSynthesisUtterance(line);u.lang='en-GB';u.rate=.94;u.pitch=who==='Masha'?1.02:.94;u.voice=who==='Masha'?v1:v2;speechSynthesis.speak(u);});
+}
+
+const jlawVideo=()=>`<div class="youtube"><iframe title="Jennifer Lawrence got busted - The Graham Norton Show" src="https://www.youtube-nocookie.com/embed/TeRePgyu13Y?rel=0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><a class="link-btn" href="https://www.youtube.com/watch?v=TeRePgyu13Y" target="_blank" rel="noopener noreferrer">↗ Open on YouTube</a>`;
+
+Object.assign(PHOTO_URLS,{
+ phone:[['https://images.pexels.com/photos/16814787/pexels-photo-16814787.jpeg?auto=compress&cs=tinysrgb&w=1200','https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1200&q=82']],
+ rain:[['https://images.pexels.com/photos/3240914/pexels-photo-3240914.jpeg?auto=compress&cs=tinysrgb&w=1200','https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?w=1200&q=82']],
+ airport:[['https://images.pexels.com/photos/32176403/pexels-photo-32176403.jpeg?auto=compress&cs=tinysrgb&w=1200','https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=82']],
+ traffic:[['https://images.pexels.com/photos/19896582/pexels-photo-19896582.jpeg?auto=compress&cs=tinysrgb&w=1200','https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&q=82']],
+ restaurant:[['https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=82','https://images.unsplash.com/photo-1552566626-52f8b828add9?w=1200&q=82']],
+ train:[['https://images.pexels.com/photos/37164531/pexels-photo-37164531.jpeg?auto=compress&cs=tinysrgb&w=1200','https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=1200&q=82']],
+ nightfriends:[['https://images.pexels.com/photos/4778797/pexels-photo-4778797.jpeg?auto=compress&cs=tinysrgb&w=1200','https://images.pexels.com/photos/7683846/pexels-photo-7683846.jpeg?auto=compress&cs=tinysrgb&w=1200']]
+});
+
+const pages=[];const add=(title,type,mins,html,sectionName)=>pages.push({title,type,mins,html,sectionName});
+
+// 01
+add('Well, This Looks Bad','Visual warm-up',2,
+S('Activity 1',intro('Look at the four situations. Choose the worst one.')+`<div class="visual-grid"><div class="visual-card">${image('phone','Phone connected to a power bank')}<div class="visual-card-copy"><b>1 · 1% BATTERY</b><span>You still need your phone.</span></div></div><div class="visual-card">${image('rain','Person walking in heavy rain')}<div class="visual-card-copy"><b>2 · NO UMBRELLA</b><span>It starts pouring.</span></div></div><div class="visual-card">${image('restaurant','Restaurant interior')}<div class="visual-card-copy"><b>3 · CLOSED</b><span>Your plans are ruined.</span></div></div><div class="visual-card">${image('train','Train at a station platform')}<div class="visual-card-copy"><b>4 · MISSED IT</b><span>The doors just closed.</span></div></div></div>`+
+mc('p1worst','Which one would annoy you most?',['1% battery','Getting caught in the rain','Arriving somewhere closed','Missing a train'],null,false))+
+S('Activity 2',intro('Discuss.')+`<ol class="compact-list"><li>Which has happened to you?</li><li>What do you usually do to avoid situations like these?</li><li>What hardly ever happens to you?</li></ol>`),'Warm-up');
+
+// 02
+add('What Happened?','Picture vocabulary',3,
+S('Activity 1',intro('Match each situation to the expression.')+`<div class="grid2"><div class="card">${image('traffic','Traffic jam with taxis')}<h3>A</h3><p>You cannot move for a long time.</p></div><div class="card">${image('nightfriends','Friends meeting unexpectedly')}<h3>B</h3><p>You meet someone unexpectedly.</p></div><div class="card">${image('airport','Traveler arriving at an airport')}<h3>C</h3><p>You finally arrive somewhere.</p></div><div class="card">${image('phone','Phone and charger')}<h3>D</h3><p>You suddenly understand the problem.</p></div></div>`+
+mc('p2a','A',['get stuck','bump into someone','turn up','realise'],0,false)+
+mc('p2b','B',['get stuck','bump into someone','turn up','realise'],1,false)+
+mc('p2c','C',['get stuck','bump into someone','turn up','realise'],2,false)+
+mc('p2d','D',['get stuck','bump into someone','turn up','realise'],3,false))+
+S('Activity 2',intro('Answer one question.')+`<ol class="compact-list"><li>Where would you hate to get stuck?</li><li>Who would surprise you if you bumped into them tomorrow?</li><li>Have you ever turned up at the wrong place?</li></ol>`+input('p2open','','Notes',null,2)),'Vocabulary');
+
+// 03
+add('Before You Watch','Prediction',2,
+S('Activity 1',intro('Look at the thumbnail. What do you think went wrong?')+`<img class="video-thumb" src="https://i.ytimg.com/vi/TeRePgyu13Y/hqdefault.jpg" alt="Jennifer Lawrence on The Graham Norton Show">`+
+checklist('p3pred','Choose any ideas.',['She had a problem at airport security.','She forgot something important.','She told someone a story that was not true.','She missed the audition completely.','Someone started asking difficult questions.'],null)),'Video');
+
+// 04
+add('Jennifer Lawrence: First Watch','Video for gist',3,
+S('Activity 1',intro('Watch once. Choose the best summary.')+jlawVideo()+
+mc('p4gist','What is the story mainly about?',['Jennifer missed an important audition because her flight was cancelled.','A small lie at airport security became a much bigger problem.','Jennifer argued with an airline employee about her luggage.','Jennifer accidentally travelled to the wrong country.'],1)),'Video');
+
+// 05
+add('Watch Again','Video for detail',4,
+S('Activity 1',intro('Watch again. Choose the correct answers.')+jlawVideo()+
+mc('p5q1','1. Why was Jennifer nervous at customs?',['She had been told not to say she was travelling for work.','She had lost her passport on the plane.','She had never travelled alone before.'],0)+
+mc('p5q2','2. What story did she give the officer?',['She was visiting an old school friend.','Her brother was getting married in Wimbledon.','She was going to a film festival.'],1)+
+mc('p5q3','3. What made the lie harder to continue?',['The officer asked more detailed questions.','Her phone rang during the conversation.','Someone recognised her immediately.'],0)+
+mc('p5q4','4. What happened after she admitted the truth?',['She was held while officials contacted her employer.','She was put on the next flight home immediately.','She was allowed through without any further questions.'],0))+
+S('Activity 2',intro('Put the story in order.')+reorderActivity('p5seq',[
+'1. Jennifer arrived in London / She was told not to mention work / She invented a wedding story / The officer asked more questions / She admitted the truth'
+],['Jennifer arrived in London She was told not to mention work She invented a wedding story The officer asked more questions She admitted the truth'])),'Video');
+
+// 06
+add('Story Language','Vocabulary from the video',3,
+S('Activity 1',intro('Read the sentences. Focus on the bold expressions.')+`<div class="story-lines"><div class="story-line">While she was waiting in line, she was <b>working herself up</b>.</div><div class="story-line">She needed a believable <b>backstory</b>.</div><div class="story-line">At first, she tried to <b>keep the story going</b>.</div><div class="story-line">Then she <b>cracked under pressure</b> and told the truth.</div><div class="story-line">She <b>ended up</b> being held at the airport.</div><div class="story-line">Now she can <b>laugh about it</b>.</div></div>`)+
+S('Activity 2',intro('Match the four main expressions to their meanings.')+matches('p6m',['Work yourself up','Backstory','Crack under pressure','End up'],['Finally find yourself in a situation you did not plan','Become increasingly nervous or upset','A story explaining what happened before','Stop coping well because of stress or pressure'],[1,2,3,0]))+
+S('Activity 3',intro('Choose the natural reaction.')+
+mc('p6r1','Your friend says she bumped into Jacob Elordi at the airport.',['No way!','I am not believing this information.'],0,false)+
+mc('p6r2','You are retelling your immediate reaction.',['I was like, “What do I do now?”','I communicated that I was uncertain.'],0,false)),'Vocabulary');
+
+// 07
+add('Talk About It','Speaking',3,
+S('About the video',intro('Discuss.')+`<ol class="compact-list"><li>When do you think Jennifer knew the story was falling apart?</li><li>Would you have admitted the truth earlier?</li><li>What makes the story funny now?</li></ol>`)+
+S('About you',intro('Answer at least two.')+`<ol class="compact-list"><li>Have you ever worked yourself up before an important conversation?</li><li>Have you ever had to keep an excuse going?</li><li>Have you ever cracked under pressure and just told the truth?</li><li>Have you ever ended up somewhere completely different from where you planned?</li></ol>`+input('p7open','','Notes',null,3)),'Speaking');
+
+// 08
+add('Grammar Detective','Grammar noticing',3,
+S('Activity 1',intro('Sort the verb phrases.')+
+sort('p8sort',['was waiting','started getting nervous','was trying to remember','asked another question','were contacting','admitted the truth'],[['BACKGROUND','already in progress'],['MAIN EVENT','new / completed event']],[0,1,0,1,0,1]))+
+S('Activity 2',intro('Choose the best explanation.')+
+mc('p8rule','Jennifer was trying to remember her story when the officer asked another question.',['Both actions started and finished at exactly the same time.','One action was already in progress; another event happened during it.','Both verbs describe regular habits.'],1)),'Grammar');
+
+// 09
+add('Past Simple vs Past Continuous','Grammar focus',5,
+S('Past Continuous',`<div class="rule-grid"><div class="rule-card"><h3>1 · What was happening?</h3><p>Use Past Continuous for an action that was already in progress at a particular moment in the past.</p><p>At 8:30, Masha <b>was getting ready</b>.</p><p>Kristina <b>was tidying up</b> the living room.</p><div class="rule-form"><b>Form:</b> was / were + verb-ing<br>I was waiting · They were talking<br><b>Negative:</b> wasn’t / weren’t + verb-ing<br><b>Question:</b> Was she waiting? · Were they talking?</div></div><div class="rule-card"><h3>2 · Background / scene</h3><p>Use it to describe the situation around the main events, or two longer actions happening at the same time.</p><p>While Masha <b>was scrolling through</b> TikTok, Kristina <b>was putting</b> some clothes away.</p><p>They <b>weren’t paying</b> attention to the time.</p><div class="rule-form">Think: <b>What was already happening?</b></div></div></div>`)+
+S('Past Simple',`<div class="rule-grid"><div class="rule-card"><h3>1 · What happened?</h3><p>Use Past Simple for a finished action, a new event, or a sequence of completed events.</p><p>Kirill <b>called</b>. Masha <b>checked</b> the address. They <b>left</b> the flat.</p><div class="rule-form"><b>Regular:</b> call → called<br><b>Irregular:</b> go → went · sleep → slept<br><b>Negative:</b> didn’t + base verb → didn’t go<br><b>Question:</b> Did they go?</div></div><div class="rule-card"><h3>2 · An event interrupts the background</h3><p>Use Past Continuous for the longer action already in progress, and Past Simple for the shorter event that happens during it.</p><p>They <b>were walking</b> to the restaurant when Masha’s phone <b>died</b>.</p><p>While they <b>were waiting</b> for a taxi, it <b>started</b> raining.</p><div class="rule-form">Think: <b>What happened next?</b></div></div></div>`)+
+S('How to choose',`<div class="quick-rule"><div><b>PAST CONTINUOUS</b>What was happening? What was in progress?</div><div><b>PAST SIMPLE</b>What happened? What changed the situation?</div><div><b>ONE LONG + ONE SHORT</b>We <b>were walking</b> when it <b>started</b> raining.</div><div><b>SEQUENCE OF EVENTS</b>We <b>left</b>, <b>called</b> Kirill and <b>found</b> a café.</div></div><div class="callout"><p><b>when</b> often introduces the shorter event: We were leaving <b>when</b> Kirill called.</p><p><b>while</b> often introduces an action in progress: <b>While</b> we were leaving, Kirill was waiting outside.</p><p>Do not choose by the word alone. Choose by the <b>meaning</b>: background or event?</p></div>`+
+mc('p9q1','Masha ___ through TikTok when Kristina called her.',['was scrolling','scrolled','was scroll'],0)+
+mc('p9q2','They were getting ready when Kirill ___.',['called','was calling','callled'],0)+
+mc('p9q3','Which form is correct?', ["They didn't went.","They didn't go.","They weren't go."],1)),'Grammar');
+
+// 10
+add('Irregular Verbs','Past Simple forms',4,
+S('Choose the second form',intro('Choose the correct Past Simple form.')+`<table class="irregular-table"><thead><tr><th>VERB</th><th>PAST SIMPLE</th></tr></thead><tbody>
+<tr><td><b>go</b></td><td>${storyChoice('p10iv1',['went','goed','was go'],0)}</td></tr>
+<tr><td><b>leave</b></td><td>${storyChoice('p10iv2',['left','leaved','was leave'],0)}</td></tr>
+<tr><td><b>sleep</b></td><td>${storyChoice('p10iv3',['slept','sleeped','was sleep'],0)}</td></tr>
+<tr><td><b>run</b></td><td>${storyChoice('p10iv4',['ran','runned','was run'],0)}</td></tr>
+<tr><td><b>have</b></td><td>${storyChoice('p10iv5',['had','haved','was have'],0)}</td></tr>
+<tr><td><b>forget</b></td><td>${storyChoice('p10iv6',['forgot','forgetted','was forget'],0)}</td></tr>
+<tr><td><b>come</b></td><td>${storyChoice('p10iv7',['came','comed','was come'],0)}</td></tr>
+<tr><td><b>find</b></td><td>${storyChoice('p10iv8',['found','finded','was find'],0)}</td></tr>
+<tr><td><b>get</b></td><td>${storyChoice('p10iv9',['got','getted','was get'],0)}</td></tr>
+<tr><td><b>take</b></td><td>${storyChoice('p10iv10',['took','taked','was take'],0)}</td></tr>
+</tbody></table>`)+
+S('Say it',intro('Choose three verbs and make a true sentence about yesterday or last weekend.')),'Grammar');
+
+
+// 12
+add('Write the Correct Form','Grammar practice',4,
+S('Complete the sentences',intro('Write the correct form of the verb in brackets.')+
+input('p12w1','1. While Masha ______ through her saved posts, Kristina called. (scroll)','Write the form',['was scrolling'])+
+input('p12w2','2. Kirill ______ to the wrong entrance and waited there. (go)','Write the form',['went'])+
+input('p12w3','3. Kristina ______ some clothes away when she found the charger. (put)','Write the form',['was putting'])+
+input('p12w4','4. They ______ any cash with them, so they paid by card. (not have)','Write the form',["didn't have","did not have"])+
+input('p12w5','5. While they ______ for a taxi, it started raining. (wait)','Write the form',['were waiting'])+
+input('p12w6','6. Masha ______ the address, put her phone away and left the flat. (check)','Write the form',['checked'])+
+input('p12w7','7. They ______ out of water, so Kristina bought some on the way home. (run)','Write the form',['ran'])+
+input('p12w8','8. Masha usually saves useful posts, but that evening she ______ to save the address. (forget)','Write the form',['forgot'])),'Grammar');
+
+// 11
+add('What Happened When?','Grammar practice',3,
+S('Choose the correct form',intro('Complete the sentences.')+[
+['1. Masha ___ through her saved posts when Kristina asked where the keys were.',['was scrolling','scrolled','was scroll'],0],
+['2. While Kristina ___ some clothes away, she found the missing charger.',['was putting','putted','was put'],0],
+['3. They usually ___ the address before they leave, but that night they forgot.',['check','are checking','were check'],0],
+['4. Kirill ___ to the wrong entrance and waited there for twenty minutes.',['went','goed','was go'],0],
+['5. They ___ any cash, so they ended up paying by card.',["didn't have","didn't had","weren't have"],0],
+['6. There ___ a few people outside while Masha was looking for the restaurant.',['were','was','was being'],0],
+['7. Masha ___ herself up while the taxi was getting closer.',['was working','workeded','was work'],0],
+['8. They ___ out of water at home, so Kristina bought some on the way back.',['ran','runned','were run'],0]
+].map((x,i)=>inlineChoice('p10q'+i,x[0],x[1],x[2])).join('')),'Grammar');
+
+// 13
+add('One Bad Friday','Grammar story',7,
+S('Complete the story',intro('Choose the correct form in each gap.')+`<div class="story-cloze"><p>Last Friday started normally. Masha and Kristina ${storyChoice('p13s1',['were getting ready','was get ready','getted ready'],0)} for dinner with Kirill after work. Masha usually saves restaurant addresses as soon as she sees them, but that evening she ${storyChoice('p13s2',['was scrolling through','scrolleded through','was scroll through'],0)} TikTok instead. A fashion video ${storyChoice('p13s3',['popped up','poped up','was pop up'],0)} on her feed, and she immediately got distracted. While she ${storyChoice('p13s4',['was watching','watcheded','was watch'],0)} it, Kristina ${storyChoice('p13s5',['was tidying up','tidyed up','was tidy up'],0)} the living room because there was too much clutter and a few bags were still lying around.</p><p>At about eight, Kirill ${storyChoice('p13s6',['called','callled','was call'],0)} and asked where they were. He was already near the restaurant. Masha ${storyChoice('p13s7',['realised','was realise','realiseded'],0)} they were late, so they quickly ${storyChoice('p13s8',['put','putted','were put'],0)} their things away and ${storyChoice('p13s9',['left','leaved','were leave'],0)} the flat. They ${storyChoice('p13s10',["didn't have","didn't had","weren't have"],0)} much time, but Masha still wanted to stop for coffee. Kristina was like, “No way. We are already late.”</p><p>While they ${storyChoice('p13s11',['were walking','was walking','walkeded'],0)} to the metro, Masha checked her phone and suddenly ${storyChoice('p13s12',['noticed','was notice','noticeded'],0)} that the battery was at 1%. She asked Kristina for a power bank, but Kristina ${storyChoice('p13s13',['forgot','forgetted','was forget'],0)} it at home. “My bad,” she said. They did not have any charger, and there was only a little battery left, so Masha stopped scrolling and tried to remember the address.</p><p>Then, out of nowhere, it ${storyChoice('p13s14',['started','startted','was start'],0)} raining. They ${storyChoice('p13s15',['ran','runned','were run'],0)} to the nearest taxi, but traffic was terrible. While the driver ${storyChoice('p13s16',['was looking','looked','was look'],0)} for another route, Masha ${storyChoice('p13s17',['came','comed','was come'],0)} across a screenshot of the restaurant in her gallery. That was when they realised something worse: they had been going to the wrong address.</p><p>They called Kirill and explained everything. He laughed because he had actually gone to the wrong entrance first, too. In the end, all three of them ${storyChoice('p13s18',['ended up','endded up','were end up'],0)} in a tiny café nearby. They ${storyChoice('p13s19',['had','haved','were have'],0)} some fries, a few drinks and no proper dinner, but nobody cared anymore. The next morning, Masha ${storyChoice('p13s20',['slept','sleeped','was sleep'],0)} until almost noon. She usually wakes up much earlier, but after that night she needed it.</p></div>`)+
+S('Quick check',mc('p13why','Why do we use “were walking” before “noticed”?',['Walking was already in progress when the new event happened.','Walking was a regular habit.','Both actions happened every Friday.'],0)+
+mc('p13recycle','Which phrase recycles language from an earlier lesson?',['a little battery','cracked under pressure','airport security'],0)),'Grammar');
+
+// 12
+add('The Mystery Night','Picture description & story',5,
+S('Activity 1 · Describe the picture',intro('Look closely. Describe what you can see now.')+`<div class="picture-focus">${image('nightfriends','Two friends together before a night out','tall')}</div><div class="recycle-tags"><span>Present Continuous</span><span>there is / there are</span><span>some / any</span><span>much / many</span><span>usually / tend to</span></div><div class="picture-prompts"><div class="picture-prompt">What are the people doing?</div><div class="picture-prompt">What is there around them?</div><div class="picture-prompt">Is there any clutter? Are there any bags or clothes lying around?</div><div class="picture-prompt">What do you think they usually do before going out?</div></div>`+input('p12desc','','Description notes',null,4))+
+S('Activity 2 · What happened next?',intro('Use the pictures to continue the story.')+`<div class="visual-grid"><div class="visual-card">${image('traffic','Taxi in heavy traffic')}<div class="visual-card-copy"><b>A · GET STUCK</b></div></div><div class="visual-card">${image('phone','Phone running out of power')}<div class="visual-card-copy"><b>B · REALISE</b></div></div><div class="visual-card">${image('rain','Rainy city street')}<div class="visual-card-copy"><b>C · OUT OF NOWHERE</b></div></div><div class="visual-card">${image('restaurant','Small restaurant or cafe')}<div class="visual-card-copy"><b>D · END UP</b></div></div></div>`+tip('Use',['Past Simple + Past Continuous','when / while','get stuck · realise · end up','I was like... / No way!'])+input('p12story','','Tell the story in 4–6 sentences',null,4)),'Storytelling');
+
+// 13
+add('The Wrong Restaurant','Reading & recycling',3,
+S('Read',intro('Read the story.')+`<div class="magazine-reading"><div class="magazine-tag">SHORT STORY</div><div class="magazine-copy"><h3>The Wrong Restaurant</h3><div class="story-text"><p>Kristina usually checks reservations twice, but that evening she was rushing after work. Before they left, she was trying to tidy up because there were too many bags lying around. Masha was scrolling through TikTok and came across a restaurant video that looked amazing, so she saved it for later.</p><p>They met Kirill in the centre. There were <b>a few</b> people outside the restaurant, but the name on the door looked wrong. While Kristina was checking her messages, Masha realised there were two places with almost the same name. They did not have <b>much</b> time, and Masha did not have <b>any</b> battery left.</p><p>They got stuck in traffic and eventually ended up at a tiny bar nearby. There were <b>some</b> fries left in the kitchen, so they shared them. “That’s so real,” Masha said when Kirill admitted he also went to the wrong place first.</p></div></div></div>`)+
+S('Check',mc('p13q1','What was Masha doing before they left?',['She was scrolling through TikTok.','She was doing the laundry.','She was buying groceries.'],0)+
+mc('p13q2','Which phrase comes from the previous lesson?',['a few people','cracked under pressure','backstory'],0)+
+mc('p13q3','Which sentence shows a background action + a new event?',['Masha was scrolling through TikTok and came across a restaurant video.','There were some fries left.','They shared them.'],0)),'Reading');
+
+// 14
+add('Everything Went Wrong','Final speaking',5,
+S('Your challenge',intro('Choose four prompts and tell a 2-minute story.')+`<div class="prompt-grid"><div class="prompt-card"><span class="micro-label">PROMPT</span><strong>📱 Dead phone</strong><p>You need information from it.</p></div><div class="prompt-card"><span class="micro-label">PROMPT</span><strong>🌧 Sudden rain</strong><p>Nobody is prepared.</p></div><div class="prompt-card"><span class="micro-label">PROMPT</span><strong>🚕 Traffic</strong><p>You are already late.</p></div><div class="prompt-card"><span class="micro-label">PROMPT</span><strong>👤 Unexpected person</strong><p>You bump into someone.</p></div><div class="prompt-card"><span class="micro-label">PROMPT</span><strong>📍 Wrong place</strong><p>You realise something is wrong.</p></div><div class="prompt-card"><span class="micro-label">PROMPT</span><strong>🍟 Unexpected ending</strong><p>You end up somewhere else.</p></div></div>`+
+checklist('p14pick','Choose four prompts.',['Dead phone','Sudden rain','Traffic','Unexpected person','Wrong place','Unexpected ending'],null)+
+input('p14notes','','Story outline',null,3))+
+S('Language check',`<div class="checklist">${['Past Simple','Past Continuous','when or while','3 expressions from today','I was like... or No way!','2 recycled items: scroll through / come across / some / any / a few / much / usually / tend to / run out of / my bad'].map((x,i)=>`<label><input type="checkbox" data-k="p14check${i}" ${vals['p14check'+i]?'checked':''}>${x}</label>`).join('')}</div>`),'Final production');
+
+// ───────────────────────────────────── APPLICATION ENGINE ─────────────────────────────────────
+let pageIdx=Math.min(pages.length-1,Math.max(0,+(new URLSearchParams(location.search).get('page')||1)-1));let pendingSort=null;
+function renderNav(){const nav=document.getElementById('chapterList');nav.innerHTML=pages.map((p,i)=>`<button class="chapter ${i===pageIdx?'active':''} ${state.visited[i]?'done':''}" type="button" data-page="${i}"><span class="no">${String(i+1).padStart(2,'0')}</span><span class="chapter-title">${esc(p.title)}</span></button>`).join('');nav.querySelector('.active')?.scrollIntoView({block:'nearest'});}
+function updateResult4(){let ans=[0,1,2,3,4].map(i=>vals['p4q'+i]);let target=document.getElementById('p4result');if(!target)return;if(ans.some(v=>v===undefined||v==='')){target.innerHTML='<strong>Your result</strong><p>Choose all five answers.</p>';return;}let table=[[0,1,2],[0,1,2],[1,0,2],[0,1,2],[1,0,2]];let names=['THE PEACEKEEPER','THE HOUSE MANAGER','THE CHAOS ROOMMATE'];let scores=[0,0,0];ans.forEach((v,i)=>scores[table[i][+v]]++);let high=Math.max(...scores);let win=names.filter((x,i)=>scores[i]===high);target.innerHTML=`<strong>YOUR RESULT</strong><h3 style="margin:4px 0">${win.join(' + ')}</h3><p>${win.length>1?'You are a mixture of these types.':'This is your strongest roommate style.'}</p>`;}
+function updateCounter23(){}
+function updateLive(){updateResult4();updateCounter23();document.querySelectorAll('[data-rateout]').forEach(el=>el.textContent=(vals[el.dataset.rateout]||3)+'/5');}
+function render(keepScroll=false){const oldY=window.scrollY;const p=pages[pageIdx];state.visited[pageIdx]=true;save();document.getElementById('intro').innerHTML=`<h1 class="page-heading">${esc(p.title)}</h1>`;document.getElementById('content').innerHTML=`<div class="content-surface">${p.html}</div>`;document.getElementById('progressNum').textContent=`${pageIdx+1} / ${pages.length}`;document.getElementById('prev').disabled=pageIdx===0;document.getElementById('next').textContent=pageIdx===pages.length-1?(state.finished?'Completed ✓':'Finish lesson ✓'):'Next →';renderNav();updateLive();paintAnswerStatuses();updateMatchLayouts();refreshReorders();drawConnections();document.getElementById('rail').classList.remove('open');if(keepScroll)window.scrollTo(0,oldY);else window.scrollTo({top:0,behavior:'instant'});}
+function navigate(n){pageIdx=Math.max(0,Math.min(pages.length-1,n));try{history.replaceState(null,'',location.pathname+'?page='+(pageIdx+1))}catch(e){}render();}
+function formatAnswer(el,ans,id){if(ans===null||ans===undefined)return '';const spec=ANSWERS[id];if(spec?.type==='one'){if(el?.matches('[data-match-row]')){const widget=el.closest('[data-match-prefix]');const b=widget?.querySelector(`[data-connect-side="right"][data-connect-index="${ans}"]`);return b?.innerText?.trim()||String(ans)}let opt=el?.querySelector(`input[value="${ans}"]`);if(opt)return opt.closest('label')?.innerText?.trim()||'';let sel=el?.querySelector('select');if(sel)return sel.options[Number(ans)+1]?.text||String(ans);let btn=el?.querySelectorAll('.small-choice')[Number(ans)];if(btn)return btn.textContent.trim();}if(spec?.type==='many')return ans.map(i=>el?.querySelector(`input[value="${i}"]`)?.closest('label')?.innerText?.trim()).filter(Boolean).join(' · ');if(Array.isArray(ans))return ans[0];return String(ans)}
+function validate(id){const spec=ANSWERS[id];if(!spec||spec.ans===null)return null;const entered=vals[id];if(spec.type==='one')return String(entered)===String(spec.ans);if(spec.type==='many'){const a=Array.isArray(entered)?entered.map(Number).sort():[],b=spec.ans.map(Number).sort();return a.length===b.length&&a.every((v,i)=>v===b[i]);}if(spec.type==='text'){const aliases=Array.isArray(spec.ans)?spec.ans:[spec.ans];return aliases.some(a=>norm(entered)===norm(a));}if(spec.type==='reorder')return norm(entered)===norm(spec.ans);if(spec.type==='sort')return Array.isArray(entered)&&entered.length===spec.ans.length&&entered.every((v,i)=>v===spec.ans[i]);return false;}
+const currentBlock=id=>{const root=document.getElementById('content');return root.querySelector(`[data-block="${id}"]`)||root.querySelector(`[data-match-row="${id}"]`)||root.querySelector(`[data-k="${id}"]`)?.closest('.input-row')||root.querySelector(`[data-sort="${id}"]`)||root.querySelector(`[data-reorder="${id}"]`)};
+function completed(id){return state.solved?.[id]||((state.attempts?.[id]||0)>=3)}
+let lessonAudio=null;
+function playFeedback(correct){
+ try{
+  const Audio=window.AudioContext||window.webkitAudioContext;if(!Audio)return;
+  lessonAudio=lessonAudio||new Audio();if(lessonAudio.state==='suspended')lessonAudio.resume();
+  const now=lessonAudio.currentTime+0.01;
+  const note=(freq,time,duration,volume,wave='sine')=>{
+   const osc=lessonAudio.createOscillator(),gain=lessonAudio.createGain();osc.type=wave;osc.frequency.setValueAtTime(freq,time);
+   gain.gain.setValueAtTime(0,time);gain.gain.linearRampToValueAtTime(volume,time+0.012);gain.gain.exponentialRampToValueAtTime(0.0001,time+duration);
+   osc.connect(gain);gain.connect(lessonAudio.destination);osc.start(time);osc.stop(time+duration+0.02);
+  };
+  if(correct){note(784,now,0.15,0.065);note(1175,now+0.105,0.24,0.06);}
+  else{note(215,now,0.11,0.024,'triangle');note(180,now+0.075,0.13,0.015,'triangle');}
+ }catch(e){/* Audio is an optional enhancement; never break an answer */}
+}
+function refreshReorders(){document.querySelectorAll('[data-reorder]').forEach(widget=>{
+ const id=widget.dataset.reorder,raw=Array.isArray(vals[id])?vals[id]:[],target=widget.querySelector('[data-reorder-target]');
+ const chips=[...widget.querySelectorAll('[data-tile]')];
+ target.innerHTML='';if(!raw.length)target.textContent='Drop or tap the words here in the correct order';
+ raw.forEach(i=>{const source=chips.find(c=>+c.dataset.tile===+i);if(!source)return;const tile=document.createElement('button');tile.type='button';tile.className='reorder-tile in-answer';tile.textContent=source.textContent;tile.dataset.reorderRemove=id;tile.dataset.tile=i;tile.draggable=true;target.appendChild(tile)});
+ chips.forEach(c=>c.classList.toggle('in-answer',raw.includes(+c.dataset.tile)));
+ const disabled=completed(id);widget.querySelectorAll('.reorder-tile, [data-reorder-check]').forEach(n=>n.disabled=disabled);
+ });}
+function updateMatchLayouts(){document.querySelectorAll('[data-match-prefix]').forEach(widget=>{
+ const prefix=widget.dataset.matchPrefix,done=widget.querySelector('.matched-pairs');if(!done)return;
+ const board=widget.querySelector('.connect-board'),leftcol=widget.querySelector('.connect-words'),rightcol=widget.querySelector('.connect-defs');
+ const before=new Map();widget.querySelectorAll('[data-connect-side]').forEach(el=>before.set(el,el.getBoundingClientRect()));
+ [...widget.querySelectorAll('[data-connect-side="left"]')].sort((a,b)=>a.dataset.connectIndex-b.dataset.connectIndex).forEach(left=>{
+  const id=prefix+left.dataset.connectIndex,row=left.closest('.connect-row')||left.closest('.match-complete-row'),finished=completed(id);
+  if(finished){
+   const correct=ANSWERS[id]?.ans;
+   const right=widget.querySelector(`[data-connect-side="right"][data-connect-index="${correct}"]`);
+   if(!right)return;
+   const pair=done.querySelector(`[data-finished-id="${id}"]`)||document.createElement('div');
+   pair.dataset.finishedId=id;pair.className='match-complete-row';
+   if(!pair.isConnected)done.appendChild(pair);
+   pair.appendChild(left);pair.appendChild(right);
+   let status=pair.querySelector('.pair-status');if(!status){status=document.createElement('span');status.className='pair-status';pair.appendChild(status);}
+   status.textContent=state.solved[id]?'✓ Matched':'✓ Answer revealed';
+   left.disabled=true;right.disabled=true;
+   if(row?.matches('.connect-row'))row.style.display='none';
+  }else{const original=widget.querySelector(`[data-match-row="${id}"]`);if(original&&!original.contains(left))original.insertBefore(left,original.firstChild);}
+ });
+ widget.querySelector('.matches-done').classList.toggle('empty',!done.children.length);
+ // Smooth FLIP transition as correctly matched cards travel below the remaining boxes.
+ widget.querySelectorAll('[data-connect-side]').forEach(el=>{
+  const initial=before.get(el),after=el.getBoundingClientRect();if(!initial||!after.width)return;
+  const dx=initial.left-after.left,dy=initial.top-after.top;
+  if((Math.abs(dx)+Math.abs(dy))>3&&el.animate){el.animate([{transform:`translate(${dx}px,${dy}px)`,opacity:.85},{transform:'translate(0,0)',opacity:1}],{duration:340,easing:'cubic-bezier(.2,.8,.2,1)'});}
+ });
+ });}
+function paintSingle(id){const spec=ANSWERS[id];if(!spec||spec.ans===null)return;const container=currentBlock(id);if(!container)return;const wasTried=(state.attempts?.[id]||0)>0||!!state.solved?.[id];const ok=!!state.solved?.[id];const exhausted=(state.attempts?.[id]||0)>=3&&!ok;const cor=container.querySelector(`[data-correction="${id}"]`);const hasAnswer=vals[id]!==undefined&&vals[id]!=='';container.classList.toggle('answered-right',ok);container.classList.toggle('answered-wrong',!ok&&wasTried);container.querySelectorAll('.option,.small-choice,.answer-input,.choice-select,.connect-card').forEach(n=>{n.classList.remove('correct','incorrect');if(!wasTried)return;if(n.matches('.option')&&n.querySelector('input:checked'))n.classList.add(ok?'correct':'incorrect');if(n.matches('.small-choice')&&String(n.dataset.val)===String(vals[id]))n.classList.add(ok?'correct':'incorrect');if(n.matches('.answer-input,.choice-select,.connect-card'))n.classList.add(ok?'correct':'incorrect')});container.querySelectorAll('input,select,button[data-chip]').forEach(n=>{if(completed(id))n.disabled=true});if(cor){cor.style.display=wasTried?'block':'none';cor.className='correction '+(ok?'right':'wrong');cor.textContent=ok?'✓ Correct':exhausted?`✕ No attempts left. Correct answer: ${formatAnswer(container,spec.ans,id)}`:`✕ Try again · ${3-(state.attempts[id]||0)} ${3-state.attempts[id]===1?'attempt':'attempts'} left`;}}
+function paintAnswerStatuses(){Object.keys(ANSWERS).forEach(id=>paintSingle(id));document.querySelectorAll('[data-match-prefix]').forEach(widget=>{const prefix=widget.dataset.matchPrefix;widget.querySelectorAll('[data-connect-side="left"]').forEach(button=>{const i=+button.dataset.connectIndex,id=prefix+i;button.classList.toggle('matched-right',!!state.solved[id]);button.classList.toggle('matched-wrong',!state.solved[id]&&(state.attempts[id]||0)>0);if(completed(id))button.disabled=true});widget.querySelectorAll('[data-connect-side="right"]').forEach(button=>{const idx=+button.dataset.connectIndex;const solved=Array.from(widget.querySelectorAll('[data-connect-side="left"]')).some(left=>state.solved[prefix+left.dataset.connectIndex]&&String(vals[prefix+left.dataset.connectIndex])===String(idx));button.classList.toggle('matched-right',solved);button.disabled=solved;});});}
+function checkOne(id){const spec=ANSWERS[id];if(!spec||spec.ans==null||completed(id))return;const v=vals[id];if(v==null||v===''||(Array.isArray(v)&&!v.length))return;const signature=JSON.stringify(v);if(state.lastTried?.[id]===signature)return;state.lastTried[id]=signature;const right=validate(id);if(right){state.solved[id]=true}else{state.attempts[id]=(state.attempts[id]||0)+1;}playFeedback(right);save();paintSingle(id);paintAnswerStatuses();updateMatchLayouts();refreshReorders();drawConnections();}
+let inputTimers={};function scheduleCheck(id,immediate=false){clearTimeout(inputTimers[id]);if(!ANSWERS[id])return;inputTimers[id]=setTimeout(()=>checkOne(id),immediate?0:1300)}
+function drawConnections(){document.querySelectorAll('[data-match-prefix]').forEach(widget=>{const svg=widget.querySelector('.connect-lines');if(!svg)return;const board=widget.querySelector('.connect-board'),rect=board.getBoundingClientRect();if(!rect.width)return;svg.setAttribute('viewBox',`0 0 ${rect.width} ${rect.height}`);svg.innerHTML='';const prefix=widget.dataset.matchPrefix;widget.querySelectorAll('[data-connect-side="left"]').forEach(btn=>{const id=prefix+btn.dataset.connectIndex,to=vals[id];if(to===undefined||to==='')return;const target=widget.querySelector(`[data-connect-side="right"][data-connect-index="${to}"]`);if(!target)return;const a=btn.getBoundingClientRect(),b=target.getBoundingClientRect(),x1=a.right-rect.left+3,y1=a.top-rect.top+a.height/2,x2=b.left-rect.left-3,y2=b.top-rect.top+b.height/2;const color=state.solved[id]?'#368767':(state.attempts[id]>0?'#c46767':'#a3a6ad');const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d',`M ${x1} ${y1} C ${(x1+x2)/2} ${y1}, ${(x1+x2)/2} ${y2}, ${x2} ${y2}`);path.setAttribute('stroke',color);path.setAttribute('stroke-width','2.3');path.setAttribute('fill','none');path.setAttribute('opacity','.85');svg.appendChild(path);});});}
+let selectedConnect=null;function clickConnect(button){const widget=button.closest('[data-match-prefix]'),prefix=button.dataset.connectPrefix,side=button.dataset.connectSide,i=+button.dataset.connectIndex;if(button.disabled)return;if(!selectedConnect){selectedConnect={prefix,side,i};button.classList.add('pair-selected');return;}if(selectedConnect.prefix!==prefix||selectedConnect.side===side){document.querySelectorAll('.pair-selected').forEach(b=>b.classList.remove('pair-selected'));selectedConnect={prefix,side,i};button.classList.add('pair-selected');return;}const left=side==='left'?i:selectedConnect.i,right=side==='right'?i:selectedConnect.i,id=prefix+left;document.querySelectorAll('.pair-selected').forEach(b=>b.classList.remove('pair-selected'));selectedConnect=null;if(completed(id))return;const other=widget.querySelectorAll('[data-connect-side="left"]');other.forEach(b=>{const otherid=prefix+b.dataset.connectIndex;if(otherid!==id&&!state.solved[otherid]&&String(vals[otherid])===String(right)){vals[otherid]='';state.lastTried[otherid]='';}});vals[id]=String(right);save();checkOne(id);paintAnswerStatuses();updateMatchLayouts();refreshReorders();drawConnections();}
+function doSortUpdate(sortid,item,to){const widget=document.querySelector(`[data-sort="${sortid}"]`);if(!widget)return;let items=widget.querySelectorAll('[data-sortkey][data-item]');const count=items.length;let old=vals[sortid]||Array(count).fill(-1);if(old.length!==count)old=Array(count).fill(-1);old[+item]=to;vals[sortid]=old;pendingSort=null;const chip=widget.querySelector(`[data-sortkey="${sortid}"][data-item="${item}"]`);const dest=to===-1?widget.querySelector('.sort-pool'):widget.querySelector(`.sort-zone[data-zone="${to}"] .zone-chips`);if(chip&&dest){const title=chip.textContent.replace(/\s*×\s*$/, '').trim();chip.textContent=title+(to===-1?'':' ×');chip.classList.remove('chosen');dest.appendChild(chip);}widget.querySelectorAll('.sort-zone').forEach(z=>z.classList.remove('ready','over'));save();}
+let draggedPointer=null,dragGhost=null,ignoreNextSortClick=false;
+document.addEventListener('pointerdown',e=>{const chip=e.target.closest('[data-sortkey][data-item]');if(!chip)return;draggedPointer={id:chip.dataset.sortkey,item:+chip.dataset.item,startX:e.clientX,startY:e.clientY,dragging:false};});
+document.addEventListener('pointermove',e=>{if(!draggedPointer)return;const dx=e.clientX-draggedPointer.startX,dy=e.clientY-draggedPointer.startY;if(!draggedPointer.dragging&&Math.hypot(dx,dy)>9){draggedPointer.dragging=true;dragGhost=document.createElement('div');dragGhost.className='drag-ghost';dragGhost.textContent=document.querySelector(`[data-sortkey="${draggedPointer.id}"][data-item="${draggedPointer.item}"]`)?.textContent||'';document.body.appendChild(dragGhost);}if(draggedPointer.dragging){e.preventDefault();dragGhost.style.left=e.clientX+11+'px';dragGhost.style.top=e.clientY+9+'px';document.querySelectorAll('.sort-zone,.sort-pool').forEach(z=>z.classList.toggle('over',!!(document.elementFromPoint(e.clientX,e.clientY)?.closest('.sort-zone,.sort-pool')===z)));}}, {passive:false});
+document.addEventListener('pointerup',e=>{if(!draggedPointer)return;const p=draggedPointer;draggedPointer=null;dragGhost?.remove();dragGhost=null;document.querySelectorAll('.sort-zone,.sort-pool').forEach(z=>z.classList.remove('over'));if(!p.dragging)return;ignoreNextSortClick=true;setTimeout(()=>ignoreNextSortClick=false,100);const dest=document.elementFromPoint(e.clientX,e.clientY)?.closest('.sort-zone,.sort-pool');if(dest)doSortUpdate(p.id,p.item,+dest.dataset.zone);});
+let bankChosen=null,reorderDragged=null;
+function setBankWord(word,slot){
+ const node=slot||[...document.querySelectorAll('[data-bank-slot]')].find(n=>!n.disabled&&!n.value.trim());
+ if(!node||node.disabled)return;
+ node.value=word;node.dispatchEvent(new Event('input',{bubbles:true}));node.dispatchEvent(new Event('change',{bubbles:true}));
+ bankChosen=null;document.querySelectorAll('.draggable-word').forEach(x=>x.classList.remove('chosen'));
+}
+function reorderMutate(id,item,remove=false,insertAt=null){if(completed(id))return;
+ const widget=document.querySelector(`[data-reorder="${id}"]`);if(!widget)return;
+ let selected=Array.isArray(vals[id])?[...vals[id]]:[];selected=selected.filter(x=>x!==item);
+ if(!remove){if(insertAt==null||insertAt>=selected.length)selected.push(item);else selected.splice(insertAt,0,item);}
+ vals[id]=selected;state.lastTried[id]='';save();refreshReorders();paintSingle(id);
+}
+document.addEventListener('click',e=>{
+ const sortCheck=e.target.closest('[data-sort-check]');if(sortCheck){checkOne(sortCheck.dataset.sortCheck);return;}
+ const bank=e.target.closest('[data-bank-word]');if(bank){bankChosen=bank.dataset.bankWord;const parent=bank.closest('[data-bank]'),prefix=parent?.dataset.bank;document.querySelectorAll('.draggable-word').forEach(x=>x.classList.toggle('chosen',x===bank));const input=[...document.querySelectorAll(`[data-bank-slot="${prefix}"]`)].find(n=>!n.disabled&&!n.value.trim());if(input)setBankWord(bankChosen,input);return;}
+ const slot=e.target.closest('[data-bank-slot]');if(slot&&bankChosen){setBankWord(bankChosen,slot);return;}
+ const tile=e.target.closest('[data-reorder-id][data-tile]');if(tile){reorderMutate(tile.dataset.reorderId,+tile.dataset.tile,false);return;}
+ const placed=e.target.closest('[data-reorder-remove][data-tile]');if(placed){reorderMutate(placed.dataset.reorderRemove,+placed.dataset.tile,true);return;}
+ const check=e.target.closest('[data-reorder-check]');if(check){const id=check.dataset.reorderCheck,widget=check.closest('[data-reorder]');const selected=Array.isArray(vals[id])?vals[id]:[];if(selected.length!==widget.querySelectorAll('.reorder-tray [data-tile]').length){const cor=widget.querySelector(`[data-correction="${id}"]`);cor.style.display='block';cor.className='correction wrong';cor.textContent='Place all the words before clicking CHECK.';return;}
+ vals[id]=selected.map(i=>widget.querySelector(`.reorder-tray [data-tile="${i}"]`)?.textContent||'').join(' ');checkOne(id);vals[id]=selected;save();refreshReorders();return;}
+ const clear=e.target.closest('[data-reorder-clear]');if(clear){vals[clear.dataset.reorderClear]=[];state.lastTried[clear.dataset.reorderClear]='';save();refreshReorders();const cor=clear.closest('[data-reorder]')?.querySelector('.correction');if(cor)cor.style.display='none';return;}
+});
+document.addEventListener('dragstart',e=>{const word=e.target.closest('[data-bank-word]');if(word){e.dataTransfer.setData('application/x-word-bank',word.dataset.bankWord);e.dataTransfer.effectAllowed='copy';return;}
+ const tile=e.target.closest('[data-reorder-id][data-tile], [data-reorder-remove][data-tile]');if(tile){const id=tile.dataset.reorderId||tile.dataset.reorderRemove;reorderDragged={id,item:+tile.dataset.tile};e.dataTransfer.setData('application/x-reorder',JSON.stringify(reorderDragged));e.dataTransfer.effectAllowed='move';}});
+document.addEventListener('dragover',e=>{if(e.target.closest('[data-bank-slot],[data-reorder-target]'))e.preventDefault();});
+document.addEventListener('drop',e=>{const slot=e.target.closest('[data-bank-slot]');if(slot){e.preventDefault();const word=e.dataTransfer.getData('application/x-word-bank');if(word)setBankWord(word,slot);return;}
+ const dest=e.target.closest('[data-reorder-target]');if(dest){e.preventDefault();const data=reorderDragged;if(!data||data.id!==dest.dataset.reorderTarget)return;
+ const placed=[...dest.querySelectorAll('[data-reorder-remove]')];let position=placed.length;const hovered=e.target.closest('[data-reorder-remove]');if(hovered)position=placed.indexOf(hovered);
+ reorderMutate(data.id,data.item,false,position);reorderDragged=null;}});
+// Touch/pointer dragging also works where HTML5 drag-and-drop is unavailable.
+let tilePointer=null;
+document.addEventListener('pointerdown',e=>{const el=e.target.closest('[data-reorder-id][data-tile], [data-reorder-remove][data-tile], [data-bank-word]');if(!el)return;tilePointer={el,startX:e.clientX,startY:e.clientY,dragging:false};});
+document.addEventListener('pointermove',e=>{if(!tilePointer)return;const p=tilePointer;if(!p.dragging&&Math.hypot(e.clientX-p.startX,e.clientY-p.startY)>10)p.dragging=true;});
+document.addEventListener('pointerup',e=>{if(!tilePointer)return;const p=tilePointer;tilePointer=null;if(!p.dragging)return;
+ const dest=document.elementFromPoint(e.clientX,e.clientY);
+ const slot=dest?.closest('[data-bank-slot]');if(p.el.matches('[data-bank-word]')&&slot){setBankWord(p.el.dataset.bankWord,slot);return;}
+ const target=dest?.closest('[data-reorder-target]');if(target&&p.el.dataset.tile!=null){const id=p.el.dataset.reorderId||p.el.dataset.reorderRemove;if(id===target.dataset.reorderTarget)reorderMutate(id,+p.el.dataset.tile,false);}
+});
+document.addEventListener('input',e=>{const node=e.target,id=node.dataset?.k;if(!id)return;if(node.type==='radio'||node.type==='checkbox')return;vals[id]=node.type==='range'?Number(node.value):node.value;save();updateLive();if(node.matches('.answer-input')){const block=currentBlock(id);block?.classList.remove('answered-wrong');block?.querySelector('.answer-input')?.classList.remove('incorrect');if(vals[id].trim())scheduleCheck(id);}});
+document.addEventListener('change',e=>{const node=e.target,id=node.dataset?.k;if(!id)return;if(node.type==='checkbox'){if(/^p\d+check/.test(id))vals[id]=node.checked;else{let a=Array.isArray(vals[id])?vals[id]:[];a=node.checked?[...new Set([...a,Number(node.value)])]:a.filter(x=>x!==Number(node.value));vals[id]=a}}else if(node.type==='range')vals[id]=+node.value;else vals[id]=node.value;save();updateLive();if(ANSWERS[id]){if(ANSWERS[id].type==='many'&&vals[id].length!==ANSWERS[id].ans.length){paintSingle(id)}else if(node.matches('.answer-input'))scheduleCheck(id,true);else {if(node.matches('.inline-select')){node.style.width='calc('+Math.min(40,Math.max(7,(node.options[node.selectedIndex]?.textContent||'Choose…').length))+'ch + 43px)';}checkOne(id);}}});
+document.addEventListener('focusout',e=>{const node=e.target,id=node.dataset?.k;if(node.matches('.answer-input')&&ANSWERS[id])scheduleCheck(id,true)});
+document.addEventListener('keydown',e=>{const node=e.target,id=node.dataset?.k;if(e.key==='Enter'&&node.matches('.answer-input')&&ANSWERS[id]){e.preventDefault();scheduleCheck(id,true)}if((e.key==='Enter'||e.key===' ')&&node.closest('.sort-zone')&&!node.closest('.sort-chip')){e.preventDefault();const z=node.closest('.sort-zone');if(pendingSort){doSortUpdate(pendingSort.id,pendingSort.item,+z.dataset.zone)}}});
+document.addEventListener('click',e=>{const conn=e.target.closest('[data-connect-prefix]');if(conn){clickConnect(conn);return;}const chip=e.target.closest('[data-chip]');if(chip){const id=chip.dataset.chip;if(completed(id))return;vals[id]=chip.dataset.val;save();chip.parentElement.querySelectorAll('.small-choice').forEach(b=>b.classList.toggle('selected',b===chip));checkOne(id);return;}const item=e.target.closest('[data-sortkey][data-item]');if(item){if(ignoreNextSortClick)return;const id=item.dataset.sortkey,num=+item.dataset.item;if(item.closest('.sort-zone'))doSortUpdate(id,num,-1);else{pendingSort={id,item:num};document.querySelectorAll(`[data-sortkey="${id}"]`).forEach(b=>b.classList.toggle('chosen',b===item));document.querySelectorAll('.sort-zone').forEach(z=>z.classList.add('ready'));}return;}const zone=e.target.closest('.sort-zone[data-zone]');if(zone&&pendingSort){doSortUpdate(pendingSort.id,pendingSort.item,+zone.dataset.zone);return;}const dplay=e.target.closest('[data-dialogue-play]');if(dplay){playDialogue(dplay.dataset.dialoguePlay);return;}const dstop=e.target.closest('[data-dialogue-stop]');if(dstop){if('speechSynthesis'in window)speechSynthesis.cancel();return;}const speaking=e.target.closest('[data-speak]');if(speaking){if('speechSynthesis'in window){speechSynthesis.cancel();let phrase=new SpeechSynthesisUtterance(speaking.dataset.speak.replace(/^[AB]: /,''));phrase.lang='en-GB';phrase.rate=.88;let voice=speechSynthesis.getVoices().find(v=>v.lang.toLowerCase().startsWith('en')&&v.name.toLowerCase().includes('natural'));if(voice)phrase.voice=voice;speechSynthesis.speak(phrase)}return;}const page=e.target.closest('[data-page]');if(page)navigate(+page.dataset.page);});
+document.addEventListener('dragstart',e=>{const item=e.target.closest('[data-sortkey][data-item]');if(!item)return;pendingSort={id:item.dataset.sortkey,item:+item.dataset.item};e.dataTransfer.setData('text/plain',JSON.stringify(pendingSort));});document.addEventListener('dragover',e=>{const z=e.target.closest('.sort-zone,.sort-pool');if(z){e.preventDefault();z.classList.add('over')}});document.addEventListener('dragleave',e=>e.target.closest('.sort-zone,.sort-pool')?.classList.remove('over'));document.addEventListener('drop',e=>{const z=e.target.closest('.sort-zone,.sort-pool');if(!z)return;e.preventDefault();if(pendingSort){doSortUpdate(pendingSort.id,pendingSort.item,+z.dataset.zone);pendingSort=null;}});
+window.addEventListener('resize',drawConnections);window.addEventListener('scroll',drawConnections,{passive:true});
+document.getElementById('prev').onclick=()=>navigate(pageIdx-1);document.getElementById('next').onclick=()=>{if(pageIdx===pages.length-1){state.finished=true;save();document.getElementById('next').textContent='Lesson completed ✓';}else navigate(pageIdx+1)};document.getElementById('mobileMenu').onclick=()=>document.getElementById('rail').classList.toggle('open');document.getElementById('reset').onclick=()=>document.getElementById('confirmModal').classList.remove('hidden');document.getElementById('cancelReset').onclick=()=>document.getElementById('confirmModal').classList.add('hidden');document.getElementById('confirmReset').onclick=()=>{Object.keys(vals).forEach(x=>delete vals[x]);state.visited={};state.checked={};state.attempts={};state.solved={};state.lastTried={};state.finished=false;save();document.getElementById('confirmModal').classList.add('hidden');navigate(0)};document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('confirmModal').classList.add('hidden');document.getElementById('rail').classList.remove('open')}});
+render();
+</script></body></html>
